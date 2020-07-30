@@ -8,12 +8,16 @@ import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserService } from './service/user-service.service';
+import { IngredientListComponent } from './ingredient-list/ingredient-list.component';
+import { IngredientFormComponent } from './ingredient-form/ingredient-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
-    UserFormComponent
+    UserFormComponent,
+    IngredientListComponent,
+    IngredientFormComponent
   ],
   imports: [
     BrowserModule,

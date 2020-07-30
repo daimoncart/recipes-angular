@@ -7,7 +7,7 @@
             class="form-control" 
             id="name" 
             name="name" 
-            placeholder="Enter your name"
+            placeholder="Enter user's first name"
             required #name="ngModel">
         </div>
         <div [hidden]="!name.pristine" class="alert alert-danger">First name is required</div>
@@ -17,7 +17,7 @@
               class="form-control" 
               id="surname" 
               name="surname" 
-              placeholder="Enter your name"
+              placeholder="Enter user's last name"
               required #surname="ngModel">
           </div>
           <div [hidden]="!surname.pristine" class="alert alert-danger">Last name is required</div>
@@ -27,7 +27,7 @@
             class="form-control" 
             id="email" 
             name="email" 
-            placeholder="Enter your email address"
+            placeholder="Enter user's email address"
             required #email="ngModel">
           <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
         </div>
@@ -37,7 +37,7 @@
               class="form-control" 
               id="password" 
               name="password" 
-              placeholder="Enter your password"
+              placeholder="Enter user's password"
               required #password="ngModel">
             <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>
           </div>
