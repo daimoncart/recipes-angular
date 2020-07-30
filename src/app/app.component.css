@@ -1,3 +1,17 @@
+a {
+    color: white;
+}
+
+ul li {
+    display: inline;
+    display: block;
+    padding: 10px;
+  }
+
+.navbar {
+    background-color: #17a2b8;
+}
+
 .svg {
     display: inline-block;
     width: 1rem;

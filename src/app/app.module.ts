@@ -10,6 +10,8 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { UserService } from './service/user-service.service';
 import { IngredientListComponent } from './ingredient-list/ingredient-list.component';
 import { IngredientFormComponent } from './ingredient-form/ingredient-form.component';
+import { UomListComponent } from './uom-list/uom-list.component';
+import { UomFormComponent } from './uom-form/uom-form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { IngredientFormComponent } from './ingredient-form/ingredient-form.compo
     UserListComponent,
     UserFormComponent,
     IngredientListComponent,
-    IngredientFormComponent
+    IngredientFormComponent,
+    UomListComponent,
+    UomFormComponent
   ],
   imports: [
     BrowserModule,
