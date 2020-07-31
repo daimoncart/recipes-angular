@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-md navbar-dark">
+    <a class="navbar-brand" routerLink="/"><img width="20%" src="../../assets/img/logo-white.svg" id="logo"></a>
+    <button #navbarToggler class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-x" aria-controls="navbarSupportedContent" (click)="isShown = !isShown" [attr.aria-expanded]="isShown"  aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse mr-auto navbar-collapse justify-content-end" [ngClass]="{ 'show': isShown }" id="navbar-x" >
+      <ul class="nav navbar-nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" (click)="isShown = false" routerLink="/users">
+            <img src="../../assets/img/people-24px.svg" class="svg"> Users
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="isShown = false" routerLink="/ingredients">
+            <img src="../../assets/img/scatter_plot-24px.svg" class="svg"> Ingredients
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="isShown = false" routerLink="/uoms">
+            <img src="../../assets/img/architecture-24px.svg" class="svg"> Units
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
