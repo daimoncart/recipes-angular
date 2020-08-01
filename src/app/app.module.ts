@@ -14,6 +14,7 @@ import { IngredientFormComponent } from './ingredient-form/ingredient-form.compo
 import { UomListComponent } from './uom-list/uom-list.component';
 import { UomFormComponent } from './uom-form/uom-form.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { LoginComponent } from './login/login.component';
     UomFormComponent,
     NaviComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
