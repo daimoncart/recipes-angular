@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import {LoginComponent} from './login/login.component';
 
 const routes: Routes = [
   { path: 'users', component: UserListComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'ingredients', component: IngredientListComponent},
   { path: 'saveingredient', component: IngredientFormComponent},
   { path: 'uoms', component: UomListComponent},
-  { path: 'saveuom', component: UomFormComponent}
+  { path: 'saveuom', component: UomFormComponent},
+  { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
