@@ -22,5 +22,4 @@ isLoggedIn(): boolean {
   return sessionStorage.getItem('recipes.token') != null;
 }
 
-
 }
