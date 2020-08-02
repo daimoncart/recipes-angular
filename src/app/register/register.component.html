@@ -1,4 +1,45 @@
-<div class="card my-5">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      Great <img src="../../assets/img/icons8-cooking-book-100.png" class="svg" alt=""> Recipes
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <label for="login">
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+      </label>
+      <label for="password">
+        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+      </label>
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+   <!-- Register -->
+    <div>
+      <a type="submit" class="active" href="#">Register</a>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- <div class="card my-5">
     <div class="card-body">
       <form (ngSubmit)="onSubmit()" #userForm="ngForm">
         <div class="form-group">
@@ -7,7 +48,7 @@
             class="form-control" 
             id="username" 
             name="username" 
-            placeholder="Enter username"
+            placeholder="Enter your username"
             required #name="ngModel">
         </div>
         <div [hidden]="!name.pristine" class="alert alert-danger">Username is required</div>
@@ -17,7 +58,7 @@
             class="form-control" 
             id="email" 
             name="email" 
-            placeholder="Enter user's email address"
+            placeholder="Enter your email address"
             required #email="ngModel">
           <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
         </div>
@@ -27,12 +68,19 @@
               class="form-control" 
               id="password" 
               name="password" 
-              placeholder="Enter user's password"
+              placeholder="Enter your password"
+              required #password="ngModel">
+            <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>
+          </div>
+          <div class="form-group">
+            <label for="email">Password</label>
+            <input type="text" [(ngModel)]="pwd2" 
+              placeholder="Enter your password"
               required #password="ngModel">
             <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>
           </div>
         <button type="submit" [disabled]="!userForm.form.valid" 
-          class="btn btn-info">Submit</button>
+          class="btn btn-info">Register</button>
       </form>
     </div>
-  </div>
+  </div> -->

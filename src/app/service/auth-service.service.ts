@@ -2,7 +2,7 @@ import { AuthenticationResult } from './../model/authentication-result';
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class AuthServiceService {
+export class AuthService {
 
   constructor() { }
 
