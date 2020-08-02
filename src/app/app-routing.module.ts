@@ -1,3 +1,4 @@
+import { RegisterComponent } from './register/register.component';
 import { UomFormComponent } from './uom-form/uom-form.component';
 import { UomListComponent } from './uom-list/uom-list.component';
 import { IngredientFormComponent } from './ingredient-form/ingredient-form.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'saveingredient', component: IngredientFormComponent},
   { path: 'uoms', component: UomListComponent},
   { path: 'saveuom', component: UomFormComponent},
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
