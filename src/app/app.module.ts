@@ -1,5 +1,5 @@
 import { NaviComponent } from './navi/navi.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';
@@ -15,6 +15,8 @@ import { UomListComponent } from './uom-list/uom-list.component';
 import { UomFormComponent } from './uom-form/uom-form.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthService } from './service/auth-service.service';
+import {SecureHttpClientService} from './service/secure-http-client.service';
 
 @NgModule({
   declarations: [
@@ -33,9 +35,10 @@ import { RegisterComponent } from './register/register.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, AuthService, SecureHttpClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

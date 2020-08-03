@@ -1,4 +1,4 @@
-import { AuthenticationResult } from './../model/authentication-result';
+import { AuthenticationResult } from '../model/authentication-result';
 import { Injectable } from '@angular/core';
 
 @Injectable()
