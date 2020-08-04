@@ -7,7 +7,9 @@ export class SecureHttpClientService {
 
   apiUrl: string;
 
-  constructor(private httpClient: HttpClient, private authService: AuthService) {
+  constructor(
+    private httpClient: HttpClient,
+    private authService: AuthService) {
   }
 
   private createAuthHeader() {
