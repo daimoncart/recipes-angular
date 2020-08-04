@@ -4,8 +4,8 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {User} from '../model/user';
 import {Router} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import {SecureHttpClientService} from "./secure-http-client.service";
 
 @Injectable({providedIn: 'root'})
 export class LoginRegisterService {
@@ -14,7 +14,7 @@ export class LoginRegisterService {
 
   constructor(
     private router: Router,
-    private http: HttpClient
+    private http: SecureHttpClientService
   ) {
     this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
     this.user = this.userSubject.asObservable();
@@ -25,7 +25,7 @@ export class LoginRegisterService {
   }
 
   login(username, password): Observable<AuthenticationResult> {
-    return this.http.post<AuthenticationResult>(`${environment.apiUrl}/login`, {username, password});
+    return this.http.post(`${environment.apiUrl}/login`, {username, password});
   }
 
   logout() {
@@ -40,11 +40,11 @@ export class LoginRegisterService {
   }
 
   getAll() {
-    return this.http.get<User[]>(`${environment.apiUrl}/users`);
+    return this.http.get(`${environment.apiUrl}/users`);
   }
 
   getById(id: string) {
-    return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
+    return this.http.get(`${environment.apiUrl}/users/${id}`);
   }
 
   update(id, params) {

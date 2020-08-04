@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'uoms', component: UomListComponent},
   { path: 'saveuom', component: UomFormComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent}
+  { path: 'register', component: RegisterComponent},
+  { path: '', component: LoginComponent}
 ];
 
 @NgModule({

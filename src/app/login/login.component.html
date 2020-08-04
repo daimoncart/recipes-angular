@@ -13,7 +13,7 @@
     </div>
 
     <!-- Login Form -->
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(); f">
       <div class="form-group">
         <label for="login">
           <input type="text" id="login" class="fadeIn second" name="login" placeholder="username"
@@ -27,7 +27,7 @@
         </label>
       </div>
       <div class="form-group">
-        <input routerLink="/users" type="button" (click)="f" class="fadeIn fourth" value="Log In">
+        <input routerLink="/users" type="submit" class="fadeIn fourth" value="Log In">
       </div>
     </form>
 
