@@ -9,29 +9,36 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      Great <img src="../../assets/img/icons8-cooking-book-100.png" class="svg" alt=""> Recipes
+      <img src="favicon.ico" class="svg" alt="">
     </div>
 
     <!-- Login Form -->
-    <form>
-      <label for="login">
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      </label>
-      <label for="password">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-      </label>
-      <input type="submit" class="fadeIn fourth" value="Log In">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="login">
+          <input type="text" id="login" class="fadeIn second" name="login" placeholder="username"
+                 formControlName="username">
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="password">
+          <input type="text" id="password" class="fadeIn third" name="login" placeholder="password"
+                 formControlName="password">
+        </label>
+      </div>
+      <div class="form-group">
+        <input routerLink="/users" type="button" (click)="f" class="fadeIn fourth" value="Log In">
+      </div>
     </form>
 
-    <!-- Remind Passowrd -->
+
+    <!-- Remind Password -->
     <div id="formFooter">
       <a class="underlineHover" href="#">Forgot Password?</a>
     </div>
 
-   <!-- Register -->
     <div>
-      <a type="submit" class="active" href="#">Register</a>
+      <a routerLink="../register" class="btn btn-link">Register</a>
     </div>
-
   </div>
 </div>

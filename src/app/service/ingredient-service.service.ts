@@ -1,6 +1,6 @@
-import { Ingredient } from './../model/ingredient';
+import { Ingredient } from '../model/ingredient';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({

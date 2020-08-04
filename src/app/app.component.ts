@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LoginRegisterService } from './service/login-register-service.service';
+import { User } from './model/user';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipes';
+  user: User;
+
+  constructor(private accountService: LoginRegisterService) {
+    this.accountService.user.subscribe(x => this.user = x);
+  }
+
+  logout() {
+    this.accountService.logout();
+  }
 }
