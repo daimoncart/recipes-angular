@@ -9,23 +9,36 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      Best Recipes <img src="favicon.ico" class="svg" alt=""> Greatest Creators
+      <img src="favicon.ico" class="svg" alt="">
     </div>
 
     <!-- Login Form -->
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <label for="login">
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" formControlName="username">
-      </label>
-      <label for="password">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" formControlName="password">
-      </label>
-      <input type="submit" class="fadeIn fourth" value="Log In">
+      <div class="form-group">
+        <label for="login">
+          <input type="text" id="login" class="fadeIn second" name="login" placeholder="username"
+                 formControlName="username">
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="password">
+          <input type="text" id="password" class="fadeIn third" name="login" placeholder="password"
+                 formControlName="password">
+        </label>
+      </div>
+      <div class="form-group">
+        <input routerLink="/users" type="button" (click)="f" class="fadeIn fourth" value="Log In">
+      </div>
     </form>
 
-    <!-- Remind Passowrd -->
+
+    <!-- Remind Password -->
     <div id="formFooter">
       <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+    <div>
+      <a routerLink="../register" class="btn btn-link">Register</a>
     </div>
   </div>
 </div>

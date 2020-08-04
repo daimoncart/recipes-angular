@@ -1,15 +1,14 @@
-import {Injectable} from '@angular/core';
-import {Router} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
-
-import {User} from '../model/user';
 import {environment} from '../../environments/environment';
 import {AuthenticationResult} from '../model/authentication-result';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {User} from '../model/user';
+import {Router} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
-export class LoginService {
+export class LoginRegisterService {
   private userSubject: BehaviorSubject<User>;
   public user: Observable<User>;
 
