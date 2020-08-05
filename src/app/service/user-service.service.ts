@@ -9,6 +9,8 @@ export class UserService {
   private usersUrlGet: string;
   private userUrlPost: string;
 
+  users: User[];
+
   constructor(private http: SecureHttpClientService) {
     this.usersUrlGet = 'http://localhost:8085/users';
     this.userUrlPost = 'http://localhost:8085/user';

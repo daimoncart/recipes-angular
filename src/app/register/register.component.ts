@@ -4,7 +4,6 @@ import {UserService} from '../service/user-service.service';
 import {User} from '../model/user';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LoginRegisterService} from '../service/login-register-service.service';
-import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'app-register',
@@ -42,16 +41,21 @@ export class RegisterComponent implements OnInit {
     this.userService.save(this.user);
 
     // stop here if form is invalid
-    if (this.registerForm.invalid) {
-      return;
-    }
+    // if (this.registerForm.invalid) {
+    //   return;
+    // }
 
-    this.loading = true;
-    this.loginRegisterService.register(this.registerForm.value)
-      .pipe(first())
-      .subscribe(
-        () => {
-          this.router.navigate(['/login'], {relativeTo: this.route});
+    this.user.username = this.f.username.value;
+    this.user.email = this.f.email.value;
+    this.user.password = this.f.password.value;
+
+    // this.loading = true;
+    this.loginRegisterService.register(this.user)
+        .subscribe( user => {
+          if (user instanceof User) {
+            this.userService.users.push(user);
+          }
+          this.router.navigate(['/login']);
         });
   }
 }

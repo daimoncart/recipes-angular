@@ -5,7 +5,6 @@ import {BehaviorSubject, Observable} from 'rxjs';
 import {User} from '../model/user';
 import {Router} from '@angular/router';
 import {map} from 'rxjs/operators';
-import {SecureHttpClientService} from "./secure-http-client.service";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({providedIn: 'root'})
@@ -37,7 +36,7 @@ export class LoginRegisterService {
   }
 
   register(user: User) {
-    return this.http.post(`${environment.apiUrl}/users/register`, user);
+    return this.http.post(`${environment.apiUrl}/register`, user);
   }
 
   getAll() {

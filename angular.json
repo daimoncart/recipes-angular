@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "recipes"
+    }
+  },
+  "defaultProject": "recipes",
+  "cli": {
+    "analytics": false
+  }
 }
