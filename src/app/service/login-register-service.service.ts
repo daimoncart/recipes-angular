@@ -6,6 +6,7 @@ import {User} from '../model/user';
 import {Router} from '@angular/router';
 import {map} from 'rxjs/operators';
 import {SecureHttpClientService} from "./secure-http-client.service";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({providedIn: 'root'})
 export class LoginRegisterService {
@@ -14,7 +15,7 @@ export class LoginRegisterService {
 
   constructor(
     private router: Router,
-    private http: SecureHttpClientService
+    private http: HttpClient
   ) {
     this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
     this.user = this.userSubject.asObservable();
@@ -25,7 +26,7 @@ export class LoginRegisterService {
   }
 
   login(username, password): Observable<AuthenticationResult> {
-    return this.http.post(`${environment.apiUrl}/login`, {username, password});
+    return this.http.post<AuthenticationResult>(`${environment.apiUrl}/login`, {username, password});
   }
 
   logout() {
