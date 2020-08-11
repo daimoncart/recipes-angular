@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './ingredient-form.component.html',
   styleUrls: ['./ingredient-form.component.css']
 })
-export class IngredientFormComponent  {
+export class IngredientFormComponent {
 
   ingredient: Ingredient;
 

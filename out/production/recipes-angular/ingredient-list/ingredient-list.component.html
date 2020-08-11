@@ -1,0 +1,21 @@
+<div class="container">
+    <a routerLink="/saveingredient" class="btn btn-info mt-3">Add Ingredient</a>
+  </div>
+  <div class="card my-2">
+      <div class="card-body">
+        <table class="table table-bordered table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ingredient of ingredients">
+              <td>{{ ingredient.id }}</td>
+              <td>{{ ingredient.name }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
