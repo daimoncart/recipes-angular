@@ -17,6 +17,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './service/auth-service.service';
 import {SecureHttpClientService} from './service/secure-http-client.service';
+import {IngredientsMeasurmentListComponent} from './ingredients-measurment-list/ingredients-measurment-list.component';
+import {IngredientsMesurementFormComponent} from './ingredients-mesurement-form/ingredients-mesurement-form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import {SecureHttpClientService} from './service/secure-http-client.service';
     NaviComponent,
     LoginComponent,
     RegisterComponent,
+    IngredientsMeasurmentListComponent,
+    IngredientsMesurementFormComponent
   ],
   imports: [
     BrowserModule,

@@ -8,17 +8,22 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import {LoginComponent} from './login/login.component';
+import {IngredientsMesurementFormComponent} from './ingredients-mesurement-form/ingredients-mesurement-form.component';
+import {IngredientsMeasurmentListComponent} from './ingredients-measurment-list/ingredients-measurment-list.component';
 
-const routes: Routes = [
-  { path: 'users', component: UserListComponent },
-  { path: 'saveuser', component: UserFormComponent },
-  { path: 'ingredients', component: IngredientListComponent},
-  { path: 'saveingredient', component: IngredientFormComponent},
-  { path: 'uoms', component: UomListComponent},
-  { path: 'saveuom', component: UomFormComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent},
-  { path: '', component: LoginComponent}
+let routes: Routes;
+routes = [
+  {path: 'users', component: UserListComponent},
+  {path: 'saveuser', component: UserFormComponent},
+  {path: 'ingredients', component: IngredientListComponent},
+  {path: 'saveingredient', component: IngredientFormComponent},
+  {path: 'uoms', component: UomListComponent},
+  {path: 'saveuom', component: UomFormComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: '', component: LoginComponent},
+  {path: 'ingredientsMeasurment', component: IngredientsMeasurmentListComponent},
+  {path: 'saveingredientsMeasurment', component: IngredientsMesurementFormComponent}
 ];
 
 @NgModule({
