@@ -15,5 +15,5 @@ export class Recipe {
         quantity: number,
         measurement: string,
         product: string
-    }]
+    }];
 }

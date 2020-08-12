@@ -20,7 +20,7 @@ export class RecipeFormComponent implements OnInit {
             name: ['', Validators.required],
             // instructions: new FormControl,
             instructions: ['', [Validators.required, Validators.minLength(10)]],
-            link: new FormControl,
+            link: new FormControl(),
             items: this.formBuilder.array([
                 this.formBuilder.group({
                     quantity: ['', Validators.required],
