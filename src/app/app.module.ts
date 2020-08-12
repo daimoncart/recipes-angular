@@ -1,3 +1,5 @@
+import { RecipeFormComponent } from './recipe-form/recipe-form.component';
+import { RecipeComponent } from './recipe/recipe.component';
 import { NaviComponent } from './navi/navi.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -30,6 +32,8 @@ import {SecureHttpClientService} from './service/secure-http-client.service';
     NaviComponent,
     LoginComponent,
     RegisterComponent,
+    RecipeComponent,
+    RecipeFormComponent
   ],
   imports: [
     BrowserModule,
