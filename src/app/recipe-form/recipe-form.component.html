@@ -20,7 +20,7 @@
 
           <div class="mb-4 bg-light">
             <label for="itemGroup">Ingredient List</label> 
-            <button class="btn btn-sm btn-info ml-2" (click)="addItem()">+</button>
+            <button type="button" class="btn btn-sm btn-info ml-2" (click)="addItem()">+</button>
             <div formArrayName="items">
                 <div class="row small">
                     <div class="col-3"><label for="quantity">Qty</label></div>
@@ -84,7 +84,7 @@
                 class="btn btn-info" [disabled]="!recipeForm.valid">Save Recipe</button>
         </div>                
         <div class="btn-group">
-            <button type="submit" 
+            <button type="button" 
                 class="btn btn-secondary pull-right" (click)="resetForm()">Clear</button>
         </div>
       </form>

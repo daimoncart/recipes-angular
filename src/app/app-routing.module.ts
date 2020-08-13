@@ -23,8 +23,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: '', component: LoginComponent},
-  { path: 'saverecipe', component: RecipeComponent},
-  { path: 'savenewrecipe', component: RecipeFormComponent},
+  { path: 'saverecipe', component: RecipeFormComponent},
   {path: 'ingredientsMeasurment', component: IngredientsMeasurmentListComponent},
   {path: 'saveingredientsMeasurment', component: IngredientsMesurementFormComponent}
 ];
