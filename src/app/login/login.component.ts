@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         authenticationResult => {
           this.authService.saveAuthentication(authenticationResult);
-          this.router.navigate(['/users']);
+          this.router.navigate(['/ingredients']);
         }
       );
   }
