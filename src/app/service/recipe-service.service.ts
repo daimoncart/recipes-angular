@@ -10,11 +10,13 @@ export class RecipeService {
   private recipesUrlGet: string;
   private recipeUrlPost: string;
   private recipesUrlByIdGet: string;
+  private recipeById: string;
 
   constructor(private http: SecureHttpClientService) {
     this.recipesUrlGet = 'http://localhost:8085/recipes';
     this.recipeUrlPost = 'http://localhost:8085/recipe';
     this.recipesUrlByIdGet = 'http://localhost:8085/user/1/recipes';
+    this.recipeById = 'http://localhost:8085/recipe/1';
   }
 
   public findAll(): Observable<Recipe[]> {
@@ -27,6 +29,10 @@ export class RecipeService {
 
   public findByUserId() {
     return this.http.get(this.recipesUrlByIdGet);
+  }
+
+  public getRecipeById(id: number): Observable<Recipe> {
+    return this.http.get(this.recipeById);
   }
 
 }

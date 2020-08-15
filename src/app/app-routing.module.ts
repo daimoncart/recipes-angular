@@ -1,3 +1,4 @@
+import { RecipeViewComponent } from './recipe-view/recipe-view.component';
 import { RecipeFormComponent } from './recipe-form/recipe-form.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { RegisterComponent } from './register/register.component';
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'saverecipe', component: RecipeFormComponent},
   {path: 'ingredientsMeasurment', component: IngredientsMeasurmentListComponent},
-  {path: 'saveingredientsMeasurment', component: IngredientMeasurementFormComponent}
+  {path: 'saveingredientsMeasurment', component: IngredientMeasurementFormComponent},
+  {path: 'viewrecipe', component: RecipeViewComponent}
 ];
 
 @NgModule({
