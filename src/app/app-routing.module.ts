@@ -10,8 +10,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import {LoginComponent} from './login/login.component';
-import {IngredientsMesurementFormComponent} from './ingredients-mesurement-form/ingredients-mesurement-form.component';
-import {IngredientsMeasurmentListComponent} from './ingredients-measurment-list/ingredients-measurment-list.component';
+import {IngredientMeasurementFormComponent} from './ingredients-measurement-form/ingredient-measurement-form.component';
+import {IngredientsMeasurmentListComponent} from './ingredients-measurement-list/ingredients-measurment-list.component';
 
 const routes: Routes = [
   { path: 'users', component: UserListComponent },
@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'saverecipe', component: RecipeFormComponent},
   {path: 'ingredientsMeasurment', component: IngredientsMeasurmentListComponent},
-  {path: 'saveingredientsMeasurment', component: IngredientsMesurementFormComponent}
+  {path: 'saveingredientsMeasurment', component: IngredientMeasurementFormComponent}
 ];
 
 @NgModule({

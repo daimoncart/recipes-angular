@@ -1,5 +1,5 @@
 <div class="container">
-  <a routerLink="/saveingredientsMeasurment" class="btn btn-info mt-3">Add Ingredien-list</a>
+  <a routerLink="/saveingredientsMeasurment" class="btn btn-info mt-3">Add Ingredient to list</a>
 </div>
 <div class="card my-2">
   <div class="card-body">
@@ -11,9 +11,9 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let ingredientMeasurment of ingredientsMeasurment">
-        <td>{{ ingredientMeasurment.name }}</td>
-        <td>{{ ingredientMeasurment.measurment }}</td>
+      <tr *ngFor="let ingredientMeasurement of ingredientMeasurements">
+        <td>{{ ingredientMeasurement.name }}</td>
+        <td>{{ ingredientMeasurement.measurment }}</td>
       </tr>
       </tbody>
     </table>

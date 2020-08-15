@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IngredientsMesurementFormComponent } from './ingredients-mesurement-form.component';
+import { IngredientMeasurementFormComponent } from './ingredient-measurement-form.component';
 
 describe('IngredientsMesurementFormComponent', () => {
-  let component: IngredientsMesurementFormComponent;
-  let fixture: ComponentFixture<IngredientsMesurementFormComponent>;
+  let component: IngredientMeasurementFormComponent;
+  let fixture: ComponentFixture<IngredientMeasurementFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IngredientsMesurementFormComponent ]
+      declarations: [ IngredientMeasurementFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IngredientsMesurementFormComponent);
+    fixture = TestBed.createComponent(IngredientMeasurementFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
