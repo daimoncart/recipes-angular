@@ -1,13 +1,15 @@
-import { AuthenticationResult } from '../model/authentication-result';
-import { Injectable } from '@angular/core';
+import {AuthenticationResult} from '../model/authentication-result';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class AuthService {
 
-  constructor() { }
+  constructor() {
+  }
 
   saveAuthentication(authenticationResult: AuthenticationResult) {
     sessionStorage.setItem('recipes.token', authenticationResult.token);
+    sessionStorage.setItem('role', authenticationResult.role.toString());
   }
 
   logout(): void {
@@ -18,8 +20,12 @@ export class AuthService {
     return sessionStorage.getItem('recipes.token');
   }
 
-isLoggedIn(): boolean {
-  return sessionStorage.getItem('recipes.token') != null;
-}
+  isAdmin(): boolean {
+    return sessionStorage.getItem('role')  == '2';
+  }
+
+  isLoggedIn(): boolean {
+    return sessionStorage.getItem('recipes.token') != null;
+  }
 
 }

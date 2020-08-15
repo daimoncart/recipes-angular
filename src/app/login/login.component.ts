@@ -3,7 +3,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {LoginRegisterService} from '../service/login-register-service.service';
 import {AuthService} from '../service/auth-service.service';
-import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-login',
@@ -56,7 +55,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         authenticationResult => {
           this.authService.saveAuthentication(authenticationResult);
-          this.router.navigate(['/users']);
+          this.router.navigate(['/ingredients']);
         }
       );
   }

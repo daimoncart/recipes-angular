@@ -11,9 +11,9 @@ export class SecureHttpClientService {
   }
 
   private createAuthHeader() {
-    const headers = new HttpHeaders({
-      Authorization: 'Bearer ' + this.authService.getToken(),
-    });
+      const headers = new HttpHeaders({
+        Authorization: 'Bearer ' + this.authService.getToken(),
+      });
 
     return {
       headers
