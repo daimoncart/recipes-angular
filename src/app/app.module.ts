@@ -1,3 +1,6 @@
+import { RecipeService } from './service/recipe-service.service';
+import { RecipeFormComponent } from './recipe-form/recipe-form.component';
+import { RecipeComponent } from './recipe/recipe.component';
 import { NaviComponent } from './navi/navi.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +20,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './service/auth-service.service';
 import {SecureHttpClientService} from './service/secure-http-client.service';
+import {IngredientsMeasurmentListComponent} from './ingredients-measurment-list/ingredients-measurment-list.component';
+import {IngredientsMesurementFormComponent} from './ingredients-mesurement-form/ingredients-mesurement-form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,10 @@ import {SecureHttpClientService} from './service/secure-http-client.service';
     NaviComponent,
     LoginComponent,
     RegisterComponent,
+    RecipeComponent,
+    RecipeFormComponent,
+    IngredientsMeasurmentListComponent,
+    IngredientsMesurementFormComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +47,7 @@ import {SecureHttpClientService} from './service/secure-http-client.service';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [UserService, AuthService, SecureHttpClientService],
+  providers: [UserService, AuthService, SecureHttpClientService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
