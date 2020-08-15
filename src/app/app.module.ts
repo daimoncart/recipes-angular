@@ -17,8 +17,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './service/auth-service.service';
 import {SecureHttpClientService} from './service/secure-http-client.service';
-import {IngredientsMeasurmentListComponent} from './ingredients-measurment-list/ingredients-measurment-list.component';
-import {IngredientsMesurementFormComponent} from './ingredients-mesurement-form/ingredients-mesurement-form.component';
+import {IngredientsMeasurmentListComponent} from './ingredients-measurement-list/ingredients-measurment-list.component';
+import {IngredientMeasurementFormComponent} from './ingredients-measurement-form/ingredient-measurement-form.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +32,8 @@ import {IngredientsMesurementFormComponent} from './ingredients-mesurement-form/
     NaviComponent,
     LoginComponent,
     RegisterComponent,
-    IngredientsMeasurmentListComponent,
-    IngredientsMesurementFormComponent
+    IngredientMeasurementFormComponent,
+    IngredientsMeasurmentListComponent
   ],
   imports: [
     BrowserModule,
