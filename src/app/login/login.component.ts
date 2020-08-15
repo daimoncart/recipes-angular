@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {LoginRegisterService} from '../service/login-register.service';
 import {AuthService} from '../service/auth.service';
 import {environment} from '../../environments/environment';
+import {FormUtils} from '../utils/form-utils';
 
 @Component({
   selector: 'app-login',
@@ -46,6 +47,8 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+
+    FormUtils.markFormGroupTouched(this.loginForm);
 
     if (this.loginForm.invalid) {
       return;

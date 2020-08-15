@@ -4,6 +4,7 @@ import {UserService} from '../service/user.service';
 import {User} from '../model/user';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LoginRegisterService} from '../service/login-register.service';
+import {FormUtils} from '../utils/form-utils';
 
 @Component({
   selector: 'app-register',
@@ -41,6 +42,8 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.userService.save(this.user);
+
+    FormUtils.markFormGroupTouched(this.registerForm);
 
     if (this.registerForm.invalid) {
       return;
