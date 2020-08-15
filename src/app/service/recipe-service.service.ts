@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Recipe } from '../model/recipe';
+import { RecipeTO } from '../model/recipe-to';
 import { Observable } from 'rxjs';
 import {SecureHttpClientService} from './secure-http-client.service';
+import { Recipe } from '../model/recipe';
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +20,11 @@ export class RecipeService {
     this.recipeById = 'http://localhost:8085/recipe/1';
   }
 
-  public findAll(): Observable<Recipe[]> {
+  public findAll(): Observable<RecipeTO[]> {
     return this.http.get(this.recipesUrlGet);
   }
 
-  public save(recipe: Recipe) {
+  public save(recipe: RecipeTO) {
     return this.http.post(this.recipeUrlPost, recipe);
   }
 

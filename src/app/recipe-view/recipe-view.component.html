@@ -1,1 +1,14 @@
-1111
+<div *ngIf="recipe">
+    <div class="mt-2 mb-1">
+{{ recipe.name | uppercase }}
+</div>
+<ul>
+<li *ngFor="let item of recipe.recipeIngredients">
+{{item.quantity}} {{ item.measurementUnit.name }} of {{item.ingredient.name}}
+</li>
+</ul>
+How to make it: {{ recipe.instructions }}
+<div *ngIf="recipe.link" class="my-2">
+({{ recipe.link }})
+</div>
+Author: {{ recipe.user.username }}</div>

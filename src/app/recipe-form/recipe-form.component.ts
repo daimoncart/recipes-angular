@@ -2,7 +2,7 @@ import { RecipeService } from './../service/recipe-service.service';
 import { IngredientBlock } from './../model/ingredient-block';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
-import { Recipe } from '../model/recipe';
+import { RecipeTO } from '../model/recipe-to';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class RecipeFormComponent implements OnInit {
     recipeForm: FormGroup;
     valueChangedTracked: any;
-    recipe: Recipe = new Recipe();
+    recipe: RecipeTO = new RecipeTO();
 
     constructor(
         private formBuilder: FormBuilder,
