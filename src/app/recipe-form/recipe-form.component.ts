@@ -14,9 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class RecipeFormComponent implements OnInit {
     recipeForm: FormGroup;
     valueChangedTracked: any;
-    itemsArr: FormArray;
     recipe: Recipe = new Recipe();
-    ingredientBlock: IngredientBlock;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -31,33 +29,30 @@ export class RecipeFormComponent implements OnInit {
             // instructions: new FormControl,
             instructions: ['', [Validators.required, Validators.minLength(10)]],
             link: new FormControl(),
-            items: this.formBuilder.array([
-                this.formBuilder.group({
-                    quantity: ['', Validators.required],
-                    measurement: ['', Validators.required],
-                    product: ['', Validators.required]
-                })
+            ingredientBlock: this.formBuilder.array([
+                this.createIngredientBlock()
             ])}
             );
 
     }
 
     onSubmit(recipeForm: FormGroup){
-        // console.log(this.recipeForm.value.name);
+                // console.log(this.recipeForm.value.name);
         // console.log(this.recipeForm.value);
-        this.recipe.name = this.recipeForm.value.name;
-        this.recipe.instructions = this.recipeForm.value.instructions;
-        this.recipe.link = this.recipeForm.value.link;
-        const temp = Array<IngredientBlock>();
+        // this.recipe.name = this.recipeForm.value.name;
+        // this.recipe.instructions = this.recipeForm.value.instructions;
+        this.recipe = this.recipeForm.getRawValue();
+        // this.recipe.link = this.recipeForm.value.link;
+        // const temp = Array<IngredientBlock>();
 
-        for (const control of this.items.controls) {
-            temp.push(
-                {quantity: control.value.quantity,
-                measurementUnit: control.value.measurement,
-                ingredient: control.value.product}
-            );
-        }
-        this.recipe.ingredientBlock = temp;
+        // for (const control of this.items.controls) {
+        //     temp.push(
+        //         {quantity: control.value.quantity,
+        //         measurementUnit: control.value.measurement,
+        //         ingredient: control.value.product}
+        //     );
+        // }
+        // this.recipe.ingredientBlock = temp;
         console.log(this.recipe);
 
         this.recipeService.save(this.recipe).subscribe(result => this.goSomewhere());
@@ -84,7 +79,7 @@ export class RecipeFormComponent implements OnInit {
 
 
     get items(){
-        return this.recipeForm.get('items') as FormArray;
+        return this.recipeForm.get('ingredientBlock') as FormArray;
     }
 
     removeItem(i: number){
@@ -93,14 +88,15 @@ export class RecipeFormComponent implements OnInit {
         this.items.removeAt(i);
     }
 
-    addItem(){
-        const newItem = this.formBuilder.group({
+    private createIngredientBlock() {
+        return this.formBuilder.group({
             quantity: ['', Validators.required],
-            measurement: ['', Validators.required],
-            product: ['', Validators.required]
+            measurementUnit: ['', Validators.required],
+            ingredient: ['', Validators.required]
         });
+    }
 
-        this.items.push(newItem);
-
+    addItem(){
+        this.items.push(this.createIngredientBlock());
     }
 }

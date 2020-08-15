@@ -21,23 +21,23 @@
           <div class="mb-4 bg-light">
             <label for="itemGroup">Ingredient List</label> 
             <button type="button" class="btn btn-sm btn-info ml-2" (click)="addItem()">+</button>
-            <div formArrayName="items">
+            <div formArrayName="ingredientBlock">
                 <div class="row small">
                     <div class="col-3"><label for="quantity">Qty</label></div>
                     <div class="col-3"><label for="uom">Measurement</label></div>
                     <div class="col"><label for="ingredient">Ingredient</label></div>
                     <div class="col-1"><label for="extra"></label></div>
                 </div>
-                <div *ngFor="let item of recipeForm.controls.items['controls']; let i=index" [formGroupName]="i"
+                <div *ngFor="let item of recipeForm.controls.ingredientBlock['controls']; let i=index" [formGroupName]="i"
                   class="row mb-1">
                     <div class="col-3">
                         <input class="form-control" type="number" formControlName="quantity" id="item{{i}}">
                     </div>
                     <div class="col-3">
-                        <input class="form-control" type="text" formControlName="measurement" id="item{{i}}">
+                        <input class="form-control" type="text" formControlName="measurementUnit" id="item{{i}}">
                     </div>
                     <div class="col">
-                        <input class="form-control" type="text" formControlName="product" id="item{{i}}">
+                        <input class="form-control" type="text" formControlName="ingredient" id="item{{i}}">
                     </div>
                     <div class="col-1 my-auto">
                         <a [routerLink] (click)="removeItem(i)">X</a>

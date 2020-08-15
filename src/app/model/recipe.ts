@@ -7,7 +7,7 @@ export class Recipe {
     instructions: string;
     link: string;
     userId: number;
-    ingredientBlock: Array<IngredientBlock>;
+    ingredientBlock: IngredientBlock[];
     // ingredientList: [{
     //     ingredient: Ingredient;
     //     uom: Uom;
