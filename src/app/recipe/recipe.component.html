@@ -1,0 +1,44 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form formGroup="recipeForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+              <label for="recipe-name">Recipe Name</label>
+              <input 
+                type="text"
+                id="recipe-name"
+                class="form-control" 
+                formControlName="recipe-name"        
+              >
+              <!-- <span 
+                class="help-block"
+                *ngIf="!recipeForm.get('recipe-name').valid"
+                >Please enter recipe name</span> -->
+          </div>
+          <div formArrayName="recipe-ingredients" class="mb-4">
+              <p>Ingredient List</p>
+              <button 
+                class="btn btn-outline-info btn-sm" 
+                type="button"
+                (click)="onAddIngredient()">
+                  Add Ingredient
+              </button>
+              <div class="form-group"  *ngFor="let recIngControl of controls; let i = index">
+                  <label for="recipe-ingredient">Ingredient</label>
+                  <input type="text" class="form-control" [formControlName]="i">
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="instructions">Instructions</label>
+            <textarea 
+              rows="5"
+              id="instructions"
+              class="form-control"
+              formControlName="instructions"
+              placeholder="This is the place you write your recipe down">
+            </textarea>         
+        </div>
+        <button type="submit" 
+        class="btn btn-info">Save</button>
+      </form>
+    </div>
+  </div>

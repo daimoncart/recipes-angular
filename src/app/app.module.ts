@@ -1,3 +1,6 @@
+import { RecipeService } from './service/recipe-service.service';
+import { RecipeFormComponent } from './recipe-form/recipe-form.component';
+import { RecipeComponent } from './recipe/recipe.component';
 import { NaviComponent } from './navi/navi.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -32,6 +35,8 @@ import {IngredientMeasurementFormComponent} from './ingredients-measurement-form
     NaviComponent,
     LoginComponent,
     RegisterComponent,
+    RecipeComponent,
+    RecipeFormComponent,
     IngredientMeasurementFormComponent,
     IngredientsMeasurmentListComponent
   ],
@@ -42,7 +47,7 @@ import {IngredientMeasurementFormComponent} from './ingredients-measurement-form
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [UserService, AuthService, SecureHttpClientService],
+  providers: [UserService, AuthService, SecureHttpClientService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

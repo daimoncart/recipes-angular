@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from '../model/recipe';
 import { Observable } from 'rxjs';
-import {SecureHttpClientService} from "./secure-http-client.service";
+import {SecureHttpClientService} from './secure-http-client.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class RecipeService {
   private recipesUrlGet: string;
   private recipeUrlPost: string;

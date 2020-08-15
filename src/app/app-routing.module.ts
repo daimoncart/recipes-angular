@@ -1,3 +1,5 @@
+import { RecipeFormComponent } from './recipe-form/recipe-form.component';
+import { RecipeComponent } from './recipe/recipe.component';
 import { RegisterComponent } from './register/register.component';
 import { UomFormComponent } from './uom-form/uom-form.component';
 import { UomListComponent } from './uom-list/uom-list.component';
@@ -11,17 +13,17 @@ import {LoginComponent} from './login/login.component';
 import {IngredientMeasurementFormComponent} from './ingredients-measurement-form/ingredient-measurement-form.component';
 import {IngredientsMeasurmentListComponent} from './ingredients-measurement-list/ingredients-measurment-list.component';
 
-let routes: Routes;
-routes = [
-  {path: 'users', component: UserListComponent},
-  {path: 'saveuser', component: UserFormComponent},
-  {path: 'ingredients', component: IngredientListComponent},
-  {path: 'saveingredient', component: IngredientFormComponent},
-  {path: 'uoms', component: UomListComponent},
-  {path: 'saveuom', component: UomFormComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: '', component: LoginComponent},
+const routes: Routes = [
+  { path: 'users', component: UserListComponent },
+  { path: 'saveuser', component: UserFormComponent },
+  { path: 'ingredients', component: IngredientListComponent},
+  { path: 'saveingredient', component: IngredientFormComponent},
+  { path: 'uoms', component: UomListComponent},
+  { path: 'saveuom', component: UomFormComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: '', component: LoginComponent},
+  { path: 'saverecipe', component: RecipeFormComponent},
   {path: 'ingredientsMeasurment', component: IngredientsMeasurmentListComponent},
   {path: 'saveingredientsMeasurment', component: IngredientMeasurementFormComponent}
 ];
