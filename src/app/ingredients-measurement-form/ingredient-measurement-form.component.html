@@ -1,27 +1,13 @@
 <div class="card my-5">
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #ingredientMeasurementForm="ngForm">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" [(ngModel)]="ingredientMeasurement.name"
 
-               class="form-control"
-               id="name"
-               name="name"
-               placeholder="Ingredient name"
-               required #name="ngModel">
-      </div>
       <label for="measurement">Measurement</label>
-      <input type="number" [(ngModel)]="ingredientMeasurement.measurement"
+      <input type="number"
              class="=form-control">
       <select name="type" id="measurement">
-        <option value="teaspoon">teaspoon</option>
-        <option value="tablespoon">tablespoon</option>
-        <option value="millilitre">millilitre</option>
-        <option value="centilitre">centilitre</option>
-        <option value="litre">litre</option>
-        <option value="gram">gram</option>
-        <option value="kilogram">kilogram</option>
+        <option *ngFor="let uom of availableUnitsOfMeasure" value="{{ uom.id }}">{{uom.name}}</option>
+
       </select>
 
 

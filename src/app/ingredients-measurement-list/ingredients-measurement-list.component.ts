@@ -17,6 +17,7 @@ export class IngredientsMeasurementListComponent implements OnInit {
   ngOnInit(): void {
     this.ingredientMeasurementServiceService.findAll().subscribe(data => {
       this.ingredientMeasurements = data;
+      console.log(data);
     });
   }
 
