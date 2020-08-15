@@ -2,10 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {IngredientMeasurement} from '../model/ingredientMeasurement';
 import {IngredientMeasurementServiceService} from '../service/ingredient-measurement-service.service';
-import {UomService} from '../service/uom-service.service';
+import {UomService} from '../service/uom.service';
 import {Ingredient} from '../model/ingredient';
 import {Uom} from '../model/uom';
-import {IngredientService} from '../service/ingredient-service.service';
+import {IngredientService} from '../service/ingredient.service';
 
 @Component({
   selector: 'app-ingredients-measurement-form',
