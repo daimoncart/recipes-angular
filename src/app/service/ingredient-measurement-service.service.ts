@@ -11,7 +11,7 @@ export class IngredientMeasurementServiceService {
   private ingredientsMeasurementUrlPost: string;
 
   constructor(private http: SecureHttpClientService) {
-    this.ingredientsMeasurementUrlGet = 'http://localhost:8085/ingredient-mesurment';
+    this.ingredientsMeasurementUrlGet = 'http://localhost:8085/ingredient-measurement-units';
     this.ingredientsMeasurementUrlPost = 'http://localhost:8085/ingredients-mesurments';
   }
 

@@ -12,8 +12,8 @@
       </thead>
       <tbody>
       <tr *ngFor="let ingredientMeasurement of ingredientMeasurements">
-        <td>{{ ingredientMeasurement.name }}</td>
-        <td>{{ ingredientMeasurement.measurment }}</td>
+        <td>{{ ingredientMeasurement.ingredient.name }}</td>
+        <td>{{ ingredientMeasurement.measurementUnit.name }}</td>
       </tr>
       </tbody>
     </table>

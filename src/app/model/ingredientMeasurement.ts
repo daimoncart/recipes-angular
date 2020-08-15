@@ -1,4 +1,7 @@
+import {Ingredient} from './ingredient';
+import {Uom} from './uom';
+
 export class IngredientMeasurement {
-  name: string;
-  measurment: string;
+  ingredient: Ingredient;
+  measurementUnit: Uom;
 }

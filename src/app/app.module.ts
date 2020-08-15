@@ -20,9 +20,9 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {AuthService} from './service/auth.service';
 import {SecureHttpClientService} from './service/secure-http-client.service';
-import {IngredientsMeasurmentListComponent} from './ingredients-measurement-list/ingredients-measurment-list.component';
-import {RecipeViewComponent} from './recipe-view/recipe-view.component';
+import {IngredientsMeasurementListComponent} from './ingredients-measurement-list/ingredients-measurement-list.component';
 import {IngredientMeasurementFormComponent} from './ingredients-measurement-form/ingredient-measurement-form.component';
+import {RecipeViewComponent} from './recipe-view/recipe-view.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +38,8 @@ import {IngredientMeasurementFormComponent} from './ingredients-measurement-form
     RegisterComponent,
     RecipeComponent,
     RecipeFormComponent,
-    IngredientsMeasurmentListComponent,
     IngredientMeasurementFormComponent,
+    IngredientsMeasurementListComponent,
     RecipeViewComponent
   ],
   imports: [
