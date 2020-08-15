@@ -1,5 +1,4 @@
 import {RecipeFormComponent} from './recipe-form/recipe-form.component';
-import {RecipeComponent} from './recipe/recipe.component';
 import {RegisterComponent} from './register/register.component';
 import {UomFormComponent} from './uom-form/uom-form.component';
 import {UomListComponent} from './uom-list/uom-list.component';
@@ -10,11 +9,11 @@ import {Routes, RouterModule} from '@angular/router';
 import {UserListComponent} from './user-list/user-list.component';
 import {UserFormComponent} from './user-form/user-form.component';
 import {LoginComponent} from './login/login.component';
-import {IngredientMeasurementFormComponent} from './ingredients-measurement-form/ingredient-measurement-form.component';
 import {IngredientsMeasurmentListComponent} from './ingredients-measurement-list/ingredients-measurment-list.component';
 import {RecipeViewComponent} from './recipe-view/recipe-view.component';
 import {AuthGuard} from "./service/auth/guards/auth.guard";
 import {Role} from "./model/role";
+import { IngredientsMesurementFormComponent } from 'out/production/recipes-angular/ingredients-mesurement-form/ingredients-mesurement-form.component';
 
 const routes: Routes = [
   {canActivate: [AuthGuard], path: 'users', component: UserListComponent, data: {roles: [Role.Admin]}},
