@@ -1,7 +1,7 @@
 import { Uom } from '../model/uom';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {SecureHttpClientService} from "./secure-http-client.service";
+import {SecureHttpClientService} from './secure-http-client.service';
 
 @Injectable({
   providedIn: 'root'

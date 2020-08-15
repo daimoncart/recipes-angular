@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
-import {LoginRegisterService} from '../service/login-register-service.service';
-import {AuthService} from '../service/auth-service.service';
-import {environment} from "../../environments/environment";
+import {LoginRegisterService} from '../service/login-register.service';
+import {AuthService} from '../service/auth.service';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
+  errorMessage: string = null;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -45,6 +46,8 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+
+    this.errorMessage = 'Invalid username or password!';
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
