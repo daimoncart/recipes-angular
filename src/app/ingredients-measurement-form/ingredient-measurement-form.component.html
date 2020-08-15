@@ -3,11 +3,13 @@
     <form (ngSubmit)="onSubmit()" #ingredientMeasurementForm="ngForm">
 
       <label for="measurement">Measurement</label>
-      <input type="number"
-             class="=form-control">
+
       <select name="type" id="measurement">
         <option *ngFor="let uom of availableUnitsOfMeasure" value="{{ uom.id }}">{{uom.name}}</option>
+      </select>
 
+      <select name="type" id="measurement1">
+        <option *ngFor="let ingredient of availableIngredients" value="{{ ingredient.id }}">{{ingredient.name}}</option>
       </select>
 
 
