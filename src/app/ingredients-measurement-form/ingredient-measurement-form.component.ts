@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {IngredientMeasurement} from '../model/ingredientMeasurement';
-import {IngredientMeasurementServiceService} from '../service/ingredient-measurement-service.service';
+
 import {UomService} from '../service/uom.service';
 import {Ingredient} from '../model/ingredient';
 import {Uom} from '../model/uom';
 import {IngredientService} from '../service/ingredient.service';
+import {IngredientMeasurementService} from '../service/ingredient-measurment.service';
 
 @Component({
   selector: 'app-ingredients-measurement-form',
@@ -23,7 +24,7 @@ export class IngredientMeasurementFormComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private ingredientMeasurementServiceService: IngredientMeasurementServiceService,
+              private ingredientMeasurementService: IngredientMeasurementService,
               private uomService: UomService,
               private ingredientService: IngredientService) {
 
@@ -42,7 +43,7 @@ export class IngredientMeasurementFormComponent implements OnInit {
 
 
   onSubmit() {
-    this.ingredientMeasurementServiceService.save(this.ingredientMeasurement).subscribe(result => this.gotoIngredientMeasurementList());
+    this.ingredientMeasurementService.save(this.ingredientMeasurement).subscribe(result => this.gotoIngredientMeasurementList());
   }
 
   gotoIngredientMeasurementList() {

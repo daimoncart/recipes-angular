@@ -12,8 +12,8 @@ import {LoginComponent} from './login/login.component';
 import {RecipeViewComponent} from './recipe-view/recipe-view.component';
 import {AuthGuard} from './service/auth/guards/auth.guard';
 import {Role} from './model/role';
-import { IngredientsMesurementFormComponent } from 'out/production/recipes-angular/ingredients-mesurement-form/ingredients-mesurement-form.component';
-import { IngredientsMeasurmentListComponent } from 'out/production/recipes-angular/ingredients-measurment-list/ingredients-measurment-list.component';
+import {IngredientsMeasurementListComponent} from './ingredients-measurement-list/ingredients-measurement-list.component';
+import { IngredientMeasurementFormComponent } from './ingredients-measurement-form/ingredient-measurement-form.component';
 
 const routes: Routes = [
   {canActivate: [AuthGuard], path: 'users', component: UserListComponent, data: {roles: [Role.Admin]}},
@@ -26,8 +26,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: '', component: LoginComponent},
   {canActivate: [AuthGuard], path: 'saverecipe', component: RecipeFormComponent},
-  {canActivate: [AuthGuard], path: 'ingredientsMeasurment', component: IngredientsMeasurmentListComponent, data: {roles: [Role.Admin]}},
-  {canActivate: [AuthGuard], path: 'saveingredientsMeasurment', component: IngredientsMesurementFormComponent, data: {roles: [Role.Admin]}},
+  {canActivate: [AuthGuard], path: 'ingredientsMeasurment', component: IngredientsMeasurementListComponent, data: {roles: [Role.Admin]}},
+  {canActivate: [AuthGuard], path: 'saveingredientsMeasurment', component: IngredientMeasurementFormComponent, data: {roles: [Role.Admin]}},
   {canActivate: [AuthGuard], path: 'viewrecipe', component: RecipeViewComponent}
 ];
 

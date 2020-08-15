@@ -23,6 +23,7 @@ import {SecureHttpClientService} from './service/secure-http-client.service';
 import {IngredientsMeasurementListComponent} from './ingredients-measurement-list/ingredients-measurement-list.component';
 import {IngredientMeasurementFormComponent} from './ingredients-measurement-form/ingredient-measurement-form.component';
 import {RecipeViewComponent} from './recipe-view/recipe-view.component';
+import {IngredientMeasurementService} from './service/ingredient-measurment.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import {RecipeViewComponent} from './recipe-view/recipe-view.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [UserService, AuthService, SecureHttpClientService, RecipeService],
+  providers: [UserService, AuthService, SecureHttpClientService, RecipeService, IngredientMeasurementService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

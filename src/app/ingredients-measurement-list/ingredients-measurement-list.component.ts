@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IngredientMeasurement} from '../model/ingredientMeasurement';
-import {IngredientMeasurementServiceService} from '../service/ingredient-measurement-service.service';
+import {IngredientMeasurementService} from '../service/ingredient-measurment.service';
+
 
 @Component({
   selector: 'app-ingredients-measurement-list',
@@ -10,12 +11,12 @@ import {IngredientMeasurementServiceService} from '../service/ingredient-measure
 export class IngredientsMeasurementListComponent implements OnInit {
   ingredientMeasurements: IngredientMeasurement[];
 
-  constructor(private ingredientMeasurementServiceService: IngredientMeasurementServiceService) {
+  constructor(private ingredientMeasurementService: IngredientMeasurementService) {
   }
 
 
   ngOnInit(): void {
-    this.ingredientMeasurementServiceService.findAll().subscribe(data => {
+    this.ingredientMeasurementService.findAll().subscribe(data => {
       this.ingredientMeasurements = data;
       console.log(data);
     });
