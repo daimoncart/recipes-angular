@@ -5,7 +5,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
 import {User} from '../model/user';
 import {Router} from '@angular/router';
 import {map} from 'rxjs/operators';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({providedIn: 'root'})
 export class LoginRegisterService {

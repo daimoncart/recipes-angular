@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../model/user';
 import { Observable } from 'rxjs';
-import {SecureHttpClientService} from "./secure-http-client.service";
+import {SecureHttpClientService} from './secure-http-client.service';
 
 @Injectable()
 export class UserService {

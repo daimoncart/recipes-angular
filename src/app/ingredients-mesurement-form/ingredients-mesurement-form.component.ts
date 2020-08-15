@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {IngredientMeasurment} from '../model/ingredientMeasurment';
-import {IngredientMeasurmentServiceService} from '../service/ingredient-measurment-service.service';
+import {IngredientMeasurmentService} from '../service/ingredient-measurment.service';
 
 @Component({
   selector: 'app-ingredients-mesurement-form',
@@ -15,7 +15,7 @@ export class IngredientsMesurementFormComponent {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private ingredientMeasurmentServiceService: IngredientMeasurmentServiceService) {
+              private ingredientMeasurmentServiceService: IngredientMeasurmentService) {
     this.ingredientsMesurment = new IngredientMeasurment();
   }
   onSubmit() {

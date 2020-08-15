@@ -5,7 +5,7 @@ import {IngredientMeasurment} from '../model/ingredientMeasurment';
 
 
 @Injectable({providedIn: 'root'})
-export class IngredientMeasurmentServiceService {
+export class IngredientMeasurmentService {
 
   private ingredientsMeasurmentUrlGet: string;
   private ingredientsMeasurmentUrlPost: string;

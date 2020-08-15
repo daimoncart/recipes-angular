@@ -12,6 +12,9 @@
       <img src="favicon.ico" class="svg" alt="">
     </div>
 
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      {{ errorMessage }}
+    </div>
     <!-- Login Form -->
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit(); f">
       <div class="form-group">

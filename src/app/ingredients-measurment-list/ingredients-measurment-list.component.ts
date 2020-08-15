@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {IngredientMeasurment} from '../model/ingredientMeasurment';
-import {IngredientMeasurmentServiceService} from '../service/ingredient-measurment-service.service';
+import {IngredientMeasurmentService} from '../service/ingredient-measurment.service';
 
 @Component({
   selector: 'app-ingredients-measurment-list',
@@ -10,7 +10,7 @@ import {IngredientMeasurmentServiceService} from '../service/ingredient-measurme
 export class IngredientsMeasurmentListComponent implements OnInit {
   ingredientsMeasurment: IngredientMeasurment[];
 
-  constructor(private ingredientMeasurmentServiceService: IngredientMeasurmentServiceService) {
+  constructor(private ingredientMeasurmentServiceService: IngredientMeasurmentService) {
   }
 
 
