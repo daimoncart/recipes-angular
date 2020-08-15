@@ -12,16 +12,15 @@ export class IngredientMeasurementFormComponent {
 
   ingredientMeasurement: IngredientMeasurement;
 
-
   constructor(private route: ActivatedRoute,
               private router: Router,
               private ingredientMeasurementServiceService: IngredientMeasurementServiceService) {
     this.ingredientMeasurement = new IngredientMeasurement();
   }
   onSubmit() {
-    this.ingredientMeasurementServiceService.save(this.ingredientMeasurement).subscribe(result => this.gotoIngredientMeasurmentList());
+    this.ingredientMeasurementServiceService.save(this.ingredientMeasurement).subscribe(result => this.gotoIngredientMeasurementList());
   }
-    gotoIngredientMeasurmentList() {
+    gotoIngredientMeasurementList() {
       this.router.navigate(['/ingredients-measurement']);
     }
 

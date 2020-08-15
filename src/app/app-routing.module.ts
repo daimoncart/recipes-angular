@@ -11,7 +11,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import {LoginComponent} from './login/login.component';
 import {IngredientMeasurementFormComponent} from './ingredients-measurement-form/ingredient-measurement-form.component';
-import {IngredientsMeasurmentListComponent} from './ingredients-measurement-list/ingredients-measurment-list.component';
+import {IngredientsMeasurementListComponent} from './ingredients-measurement-list/ingredients-measurement-list.component';
 
 const routes: Routes = [
   { path: 'users', component: UserListComponent },
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: '', component: LoginComponent},
   { path: 'saverecipe', component: RecipeFormComponent},
-  {path: 'ingredientsMeasurment', component: IngredientsMeasurmentListComponent},
+  {path: 'ingredientsMeasurment', component: IngredientsMeasurementListComponent},
   {path: 'saveingredientsMeasurment', component: IngredientMeasurementFormComponent}
 ];
 
