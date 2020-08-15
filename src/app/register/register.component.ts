@@ -28,22 +28,23 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      username: ['', Validators.required, Validators.minLength(4)],
       email: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
-  get f() { return this.registerForm.controls; }
+  get f() {
+    return this.registerForm.controls;
+  }
 
   onSubmit() {
     this.submitted = true;
     this.userService.save(this.user);
 
-    // stop here if form is invalid
-    // if (this.registerForm.invalid) {
-    //   return;
-    // }
+    if (this.registerForm.invalid) {
+      return;
+    }
 
     this.user.username = this.f.username.value;
     this.user.email = this.f.email.value;
@@ -51,11 +52,11 @@ export class RegisterComponent implements OnInit {
 
     // this.loading = true;
     this.loginRegisterService.register(this.user)
-        .subscribe( user => {
-          if (user instanceof User) {
-            this.userService.users.push(user);
-          }
-          this.router.navigate(['/login']);
-        });
+      .subscribe(user => {
+        if (user instanceof User) {
+          this.userService.users.push(user);
+        }
+        this.router.navigate(['/login']);
+      });
   }
 }
