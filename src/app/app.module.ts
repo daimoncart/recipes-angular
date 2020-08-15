@@ -21,6 +21,7 @@ import {RegisterComponent} from './register/register.component';
 import {AuthService} from './service/auth.service';
 import {SecureHttpClientService} from './service/secure-http-client.service';
 import {IngredientsMeasurmentListComponent} from './ingredients-measurement-list/ingredients-measurment-list.component';
+import {RecipeViewComponent} from './recipe-view/recipe-view.component';
 import {IngredientMeasurementFormComponent} from './ingredients-measurement-form/ingredient-measurement-form.component';
 
 @NgModule({
@@ -37,8 +38,9 @@ import {IngredientMeasurementFormComponent} from './ingredients-measurement-form
     RegisterComponent,
     RecipeComponent,
     RecipeFormComponent,
+    IngredientsMeasurmentListComponent,
     IngredientMeasurementFormComponent,
-    IngredientsMeasurmentListComponent
+    RecipeViewComponent
   ],
   imports: [
     BrowserModule,

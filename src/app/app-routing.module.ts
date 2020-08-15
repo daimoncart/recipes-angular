@@ -12,6 +12,7 @@ import {UserFormComponent} from './user-form/user-form.component';
 import {LoginComponent} from './login/login.component';
 import {IngredientMeasurementFormComponent} from './ingredients-measurement-form/ingredient-measurement-form.component';
 import {IngredientsMeasurmentListComponent} from './ingredients-measurement-list/ingredients-measurment-list.component';
+import {RecipeViewComponent} from './recipe-view/recipe-view.component';
 
 const routes: Routes = [
   {path: 'users', component: UserListComponent},
