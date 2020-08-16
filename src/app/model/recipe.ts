@@ -3,6 +3,7 @@ export class Recipe {
     instructions: string;
     link: string;
     name: string;
+    pictureLink: string;
     recipeIngredients: [{
             id: number,
             ingredient: {
