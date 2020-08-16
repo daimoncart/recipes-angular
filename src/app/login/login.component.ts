@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
-import {LoginRegisterService} from '../service/login-register-service.service';
-import {AuthService} from '../service/auth-service.service';
-import {environment} from "../../environments/environment";
+import {LoginRegisterService} from '../service/login-register.service';
+import {AuthService} from '../service/auth.service';
+import {environment} from '../../environments/environment';
+import {FormUtils} from '../utils/form-utils';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
+  errorMessage: string = null;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -30,9 +32,9 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      username: ['', Validators.required, Validators.minLength(4)],
       password: ['', Validators.required]
     });
 
@@ -46,7 +48,8 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    // stop here if form is invalid
+    FormUtils.markFormGroupTouched(this.loginForm);
+
     if (this.loginForm.invalid) {
       return;
     }
@@ -56,7 +59,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         authenticationResult => {
           this.authService.saveAuthentication(authenticationResult);
-          this.router.navigate(['/users']);
+          this.router.navigate(['/ingredients']);
         }
       );
   }

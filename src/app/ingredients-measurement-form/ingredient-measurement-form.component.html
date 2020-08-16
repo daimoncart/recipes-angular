@@ -1,19 +1,21 @@
 <div class="card my-5">
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #ingredientMeasurementForm="ngForm">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" [(ngModel)]="ingredientMeasurementForm.name"
-               class="form-control"
-               id="name"
-               name="name"
-               placeholder="Enter ingredient name"
-               required #name="ngModel">
-      </div>
-      <div [hidden]="!name.pristine" class="alert alert-danger">Ingredient name is required</div>
+
+      <label for="measurement">Measurement</label>
+
+      <select name="type" id="measurement">
+        <option *ngFor="let uom of availableUnitsOfMeasure" value="{{ uom.id }}">{{uom.name}}</option>
+      </select>
+
+      <select name="type" id="measurement1">
+        <option *ngFor="let ingredient of availableIngredients" value="{{ ingredient.id }}">{{ingredient.name}}</option>
+      </select>
+
 
       <button type="submit" [disabled]="!ingredientMeasurementForm.form.valid"
-              class="btn btn-info">Submit</button>
+              class="btn btn-info">Submit
+      </button>
     </form>
   </div>
 </div>

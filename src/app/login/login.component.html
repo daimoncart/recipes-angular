@@ -12,22 +12,33 @@
       <img src="favicon.ico" class="svg" alt="">
     </div>
 
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      {{ errorMessage }}
+    </div>
     <!-- Login Form -->
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit(); f">
       <div class="form-group">
         <label for="login">
-          <input type="text" id="login" class="fadeIn second" name="login" placeholder="username"
-                 formControlName="username">
+          <input type="text" id="login" class="fadeIn second" required minlength="4" name="login"
+                 placeholder="username" formControlName="username">
         </label>
-      </div>
-      <div class="form-group">
-        <label for="password">
-          <input type="password" id="password" class="fadeIn third" name="login" placeholder="password"
-                 formControlName="password">
-        </label>
-      </div>
-      <div class="form-group">
-        <input type="submit" class="fadeIn fourth" value="Log In">
+        <div *ngIf="f.username.invalid && (f.username.dirty || f.username.touched)"
+             class="invalid-feedback">
+          Username is required.
+        </div>
+        <div class="form-group">
+          <label for="password">
+            <input type="password" id="password" class="fadeIn third" name="login" placeholder="password"
+                   formControlName="password">
+          </label>
+          <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)"
+               class="invalid-feedback">
+            Password is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="fadeIn fourth" value="Log In">
+        </div>
       </div>
     </form>
 

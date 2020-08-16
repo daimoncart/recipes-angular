@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AuthService} from './auth-service.service';
+import {AuthService} from './auth.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
@@ -7,13 +7,15 @@ export class SecureHttpClientService {
 
   apiUrl: string;
 
-  constructor(private httpClient: HttpClient, private authService: AuthService) {
+  constructor(
+    private httpClient: HttpClient,
+    private authService: AuthService) {
   }
 
   private createAuthHeader() {
-    const headers = new HttpHeaders({
-      Authorization: 'Bearer ' + this.authService.getToken(),
-    });
+      const headers = new HttpHeaders({
+        Authorization: 'Bearer ' + this.authService.getToken(),
+      });
 
     return {
       headers

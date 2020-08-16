@@ -1,5 +1,5 @@
-import { RecipeService } from './../service/recipe-service.service';
-import { IngredientBlock } from './../model/ingredient-block';
+import { RecipeService } from '../service/recipe.service';
+import { IngredientBlock } from '../model/ingredient-block';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { RecipeTO } from '../model/recipe-to';

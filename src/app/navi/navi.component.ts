@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AuthService} from "../service/auth.service";
 
 @Component({
     selector: 'app-navi',
@@ -7,5 +8,21 @@ import { Component } from '@angular/core';
 })
 
 export class NaviComponent {
+
+  constructor(private authService: AuthService) {
+  }
+
     isShown = false;
+
+  logout(){
+    this.authService.logout();
+  }
+
+   isLoggedIn(): boolean {
+    return this.authService.isLoggedIn();
+  }
+
+  isAdmin(): boolean {
+    return this.authService.isAdmin();
+  }
 }
