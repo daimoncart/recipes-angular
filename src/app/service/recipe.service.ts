@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import {SecureHttpClientService} from './secure-http-client.service';
 import { Recipe } from '../model/recipe';
 import {RecipeView} from '../model/recipe-view';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +12,13 @@ import {RecipeView} from '../model/recipe-view';
 export class RecipeService {
 
   private readonly url = 'http://localhost:8085/';
-  constructor(private http: SecureHttpClientService) {
+  constructor(private http: SecureHttpClientService, private https: HttpClient) {
 
   }
 
   public findAll(): Observable<RecipeView[]> {
     const recipeUrl = this.url + 'recipes/ingredients';
-    return this.http.get(recipeUrl);
+    return this.https.get<RecipeView[]>(recipeUrl);
   }
 
   public save(recipe: RecipeTO) {
