@@ -1,7 +1,5 @@
-import { RecipeViewComponent } from './recipe-view/recipe-view.component';
 import {RecipeService} from './service/recipe.service';
 import {RecipeFormComponent} from './recipe-form/recipe-form.component';
-import {RecipeComponent} from './recipe/recipe.component';
 import {NaviComponent} from './navi/navi.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';

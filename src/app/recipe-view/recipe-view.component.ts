@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../service/recipe.service';
 import { Recipe } from '../model/recipe';
@@ -11,11 +12,13 @@ import { Recipe } from '../model/recipe';
 export class RecipeViewComponent implements OnInit {
     recipe: Recipe = null;
     constructor(
-        private recipeService: RecipeService
+        private recipeService: RecipeService,
+        private route: ActivatedRoute
     ){}
 
     ngOnInit(){
-        this.recipeService.getRecipeById(1).subscribe(data => {
+        const id = +this.route.snapshot.paramMap.get('recipeId');
+        this.recipeService.getRecipeById(id).subscribe(data => {
             // console.log(data);
             this.recipe = data;
             console.log(this.recipe);

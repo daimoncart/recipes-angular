@@ -28,7 +28,7 @@ const routes: Routes = [
   {canActivate: [AuthGuard], path: 'saverecipe', component: RecipeFormComponent},
   {canActivate: [AuthGuard], path: 'ingredientsMeasurment', component: IngredientsMeasurementListComponent, data: {roles: [Role.Admin]}},
   {canActivate: [AuthGuard], path: 'saveingredientsMeasurment', component: IngredientMeasurementFormComponent, data: {roles: [Role.Admin]}},
-  {canActivate: [AuthGuard], path: 'viewrecipe', component: RecipeViewComponent}
+  {path: 'recipe/:recipeId', component: RecipeViewComponent}
 ];
 
 @NgModule({

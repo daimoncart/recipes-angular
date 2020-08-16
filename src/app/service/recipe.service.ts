@@ -13,6 +13,8 @@ export class RecipeService {
   private recipesUrlByIdGet: string;
   private recipeById: string;
 
+  private readonly url = 'http://localhost:8085';
+
   constructor(private http: SecureHttpClientService) {
     this.recipesUrlGet = 'http://localhost:8085/recipes';
     this.recipeUrlPost = 'http://localhost:8085/recipe';
@@ -33,7 +35,8 @@ export class RecipeService {
   }
 
   public getRecipeById(id: number): Observable<Recipe> {
-    return this.http.get(this.recipeById);
+    const recipeUrl = this.url + '/recipe/' + id;
+    return this.http.get(recipeUrl);
   }
 
 }
