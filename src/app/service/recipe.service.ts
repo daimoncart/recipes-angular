@@ -8,34 +8,29 @@ import { Recipe } from '../model/recipe';
   providedIn: 'root'
 })
 export class RecipeService {
-  private recipesUrlGet: string;
-  private recipeUrlPost: string;
-  private recipesUrlByIdGet: string;
-  private recipeById: string;
 
-  private readonly url = 'http://localhost:8085';
-
+  private readonly url = 'http://localhost:8085/';
   constructor(private http: SecureHttpClientService) {
-    this.recipesUrlGet = 'http://localhost:8085/recipes';
-    this.recipeUrlPost = 'http://localhost:8085/recipe';
-    this.recipesUrlByIdGet = 'http://localhost:8085/user/1/recipes';
-    this.recipeById = 'http://localhost:8085/recipe/1';
+
   }
 
   public findAll(): Observable<RecipeTO[]> {
-    return this.http.get(this.recipesUrlGet);
+    const recipeUrl = this.url + 'recipes';
+    return this.http.get(recipeUrl);
   }
 
   public save(recipe: RecipeTO) {
-    return this.http.post(this.recipeUrlPost, recipe);
+    const recipeUrl = this.url + 'recipe';
+    return this.http.post(recipeUrl, recipe);
   }
 
-  public findByUserId() {
-    return this.http.get(this.recipesUrlByIdGet);
+  public findByUserName(name: string) {
+    const recipeUrl = this.url + name + '/recipes';
+    return this.http.get(recipeUrl);
   }
 
   public getRecipeById(id: number): Observable<Recipe> {
-    const recipeUrl = this.url + '/recipe/' + id;
+    const recipeUrl = this.url + 'recipe/' + id;
     return this.http.get(recipeUrl);
   }
 
