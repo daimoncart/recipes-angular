@@ -1,0 +1,22 @@
+<div class="container">
+</div>
+<div class="card my-2">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">IngredientCount</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let recipes of recipes">
+        <td>{{ recipes.name }}</td>
+        <td>{{ recipes.username }}</td>
+        <td>{{ recipes.ingredientCount }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

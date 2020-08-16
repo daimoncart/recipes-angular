@@ -3,6 +3,7 @@ import { RecipeTO } from '../model/recipe-to';
 import { Observable } from 'rxjs';
 import {SecureHttpClientService} from './secure-http-client.service';
 import { Recipe } from '../model/recipe';
+import {RecipeView} from '../model/recipe-view';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,8 @@ export class RecipeService {
 
   }
 
-  public findAll(): Observable<RecipeTO[]> {
-    const recipeUrl = this.url + 'recipes';
+  public findAll(): Observable<RecipeView[]> {
+    const recipeUrl = this.url + 'recipes/ingredients';
     return this.http.get(recipeUrl);
   }
 
