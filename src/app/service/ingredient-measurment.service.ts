@@ -12,7 +12,7 @@ export class IngredientMeasurementService {
 
   constructor(private secureHttpClientService: SecureHttpClientService) {
     this.ingredientsMeasurmentUrlGet = 'http://localhost:8085/ingredient-measurement-units';
-    this.ingredientsMeasurmentUrlPost = 'http://localhost:8085/ingredients-mesurments';
+    this.ingredientsMeasurmentUrlPost = 'http://localhost:8085/ingredient-measurement-unit';
   }
 
   public findAll(): Observable<IngredientMeasurement[]> {

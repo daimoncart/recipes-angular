@@ -7,6 +7,7 @@ import {Ingredient} from '../model/ingredient';
 import {Uom} from '../model/uom';
 import {IngredientService} from '../service/ingredient.service';
 import {IngredientMeasurementService} from '../service/ingredient-measurment.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-ingredients-measurement-form',
@@ -15,10 +16,7 @@ import {IngredientMeasurementService} from '../service/ingredient-measurment.ser
 })
 export class IngredientMeasurementFormComponent implements OnInit {
 
-  ingredientMeasurement: IngredientMeasurement;
-  ingredient: Ingredient;
-  uom: Uom;
-
+  measurementForm: FormGroup;
   availableUnitsOfMeasure: Uom[] = [];
   availableIngredients: Ingredient[] = [];
 
@@ -26,28 +24,39 @@ export class IngredientMeasurementFormComponent implements OnInit {
               private router: Router,
               private ingredientMeasurementService: IngredientMeasurementService,
               private uomService: UomService,
-              private ingredientService: IngredientService) {
-
-    this.ingredientMeasurement = new IngredientMeasurement();
+              private ingredientService: IngredientService,
+              private formMeasurementBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
 
     this.uomService.findAll().subscribe(result => {
       this.availableUnitsOfMeasure = result;
-    }),
-      this.ingredientService.findAll().subscribe((result => {
-        this.availableIngredients = result;
-      }));
+    });
+
+    this.ingredientService.findAll().subscribe((result => {
+      this.availableIngredients = result;
+    }));
+
+    this.measurementForm = this.formMeasurementBuilder.group({
+      measurementId: ['', Validators.required],
+      ingredientId: ['', Validators.required]
+    });
   }
 
 
   onSubmit() {
-    this.ingredientMeasurementService.save(this.ingredientMeasurement).subscribe(result => this.gotoIngredientMeasurementList());
+    const values = this.measurementForm.getRawValue();
+
+    const ingredientMeasurement: IngredientMeasurement = new IngredientMeasurement();
+    ingredientMeasurement.ingredientId = values.ingredientId;
+    ingredientMeasurement.measurementUnitId = values.measurementId;
+
+    this.ingredientMeasurementService.save(ingredientMeasurement).subscribe(result => this.gotoIngredientMeasurementList());
   }
 
   gotoIngredientMeasurementList() {
-    this.router.navigate(['/ingredients-measurement']);
+    this.router.navigate(['/ingredientsMeasurment']);
   }
 
 }
