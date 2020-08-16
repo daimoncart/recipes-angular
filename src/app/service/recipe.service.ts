@@ -16,7 +16,7 @@ export class RecipeService {
   }
 
   public findAll(): Observable<RecipeView[]> {
-    const recipeUrl = this.url + 'recipes';
+    const recipeUrl = this.url + 'recipes/ingredients';
     return this.http.get(recipeUrl);
   }
 
