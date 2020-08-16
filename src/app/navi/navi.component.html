@@ -6,7 +6,7 @@
 
     <div class="collapse mr-auto navbar-collapse justify-content-end" [ngClass]="{ 'show': isShown }" id="navbar-x" >
       <ul class="nav navbar-nav justify-content-end">
-        <li class="nav-item" *ngIf="isAdmin() && isLoggedIn()">
+        <li class="nav-item" *ngIf="isLoggedIn()">
           <a class="nav-link" (click)="isShown = false" routerLink="/recipes">
             <img src="../../assets/img/restaurant_menu-24px.svg" class="svg"> Recipes
           </a>
@@ -16,7 +16,7 @@
             <img src="../../assets/img/people-24px.svg" class="svg"> Users
           </a>
         </li>
-        <li class="nav-item" *ngIf="isLoggedIn()">
+        <li class="nav-item" *ngIf="isAdmin() && isLoggedIn()">
           <a class="nav-link" (click)="isShown = false" routerLink="/ingredients">
             <img src="../../assets/img/scatter_plot-24px.svg" class="svg"> Ingredients
           </a>
