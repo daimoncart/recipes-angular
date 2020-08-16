@@ -25,6 +25,11 @@ export class RecipeService {
     return this.http.post(recipeUrl, recipe);
   }
 
+  public findMyRecipes(): Observable<Recipe[]> {
+    const recipeUrl = this.url + 'my-recipes';
+    return this.http.get(recipeUrl);
+  }
+
   public findByUserName(name: string) {
     const recipeUrl = this.url + name + '/recipes';
     return this.http.get(recipeUrl);

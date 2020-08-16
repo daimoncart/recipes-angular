@@ -1,0 +1,21 @@
+<div class="container">
+    <a routerLink="/saverecipe" class="btn btn-info mt-3">Add New Recipe</a>
+  </div>
+  <div class="card my-2">
+      <div class="card-body">
+        <table class="table table-bordered table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let recipe of recipes">
+              <td>{{ recipe.id }}</td>
+              <td>{{ recipe.name }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>

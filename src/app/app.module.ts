@@ -1,4 +1,4 @@
-import {MyRecipeList } from './my-recipe-list/my-recipe-list.component';
+import {MyRecipeListComponent } from './my-recipe-list/my-recipe-list.component';
 import {RecipeService} from './service/recipe.service';
 import {RecipeFormComponent} from './recipe-form/recipe-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -43,7 +43,7 @@ import {RecipeView} from './model/recipe-view';
     IngredientsMeasurementListComponent,
     RecipeViewComponent,
     RecipeListComponent,
-    MyRecipeList
+    MyRecipeListComponent
   ],
   imports: [
     BrowserModule,
