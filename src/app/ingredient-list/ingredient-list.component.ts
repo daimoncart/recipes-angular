@@ -1,6 +1,6 @@
-import { IngredientService } from '../service/ingredient.service';
-import { Ingredient } from './../model/ingredient';
-import { Component, OnInit } from '@angular/core';
+import {IngredientService} from '../service/ingredient.service';
+import {Ingredient} from '../model/ingredient';
+import {Component, OnInit} from '@angular/core';
 
 
 @Component({
@@ -12,7 +12,9 @@ export class IngredientListComponent implements OnInit {
 
   ingredients: Ingredient[];
 
-  constructor(private ingredientService: IngredientService) { }
+  constructor(private ingredientService: IngredientService) {
+  }
+
 
   ngOnInit() {
     this.ingredientService.findAll().subscribe(data => {

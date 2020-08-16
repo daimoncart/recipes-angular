@@ -1,7 +1,8 @@
-import { Ingredient } from '../model/ingredient';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {Ingredient} from '../model/ingredient';
+import {Injectable} from '@angular/core';
+import {Observable, of} from 'rxjs';
 import {SecureHttpClientService} from './secure-http-client.service';
+import {catchError, tap, map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

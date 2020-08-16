@@ -22,6 +22,7 @@ import {IngredientsMeasurementListComponent} from './ingredients-measurement-lis
 import {IngredientMeasurementFormComponent} from './ingredients-measurement-form/ingredient-measurement-form.component';
 import {RecipeViewComponent} from './recipe-view/recipe-view.component';
 import {IngredientMeasurementService} from './service/ingredient-measurment.service';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import {NaviComponent} from './navi/navi.component';
 import {RecipeListComponent} from './recipes-list/recipes-list.component';
 import {RecipeView} from './model/recipe-view';
@@ -50,7 +51,8 @@ import {RecipeView} from './model/recipe-view';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AutocompleteLibModule
   ],
   providers: [UserService, AuthService, SecureHttpClientService, RecipeService, IngredientMeasurementService, RecipeView],
   bootstrap: [AppComponent]
