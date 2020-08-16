@@ -29,6 +29,7 @@ export class RecipeFormComponent implements OnInit {
             // instructions: new FormControl,
             instructions: ['', [Validators.required, Validators.minLength(10)]],
             link: new FormControl(),
+            pictureLink: new FormControl(),
             ingredientBlock: this.formBuilder.array([
                 this.createIngredientBlock()
             ])}

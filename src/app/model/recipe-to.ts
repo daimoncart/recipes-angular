@@ -6,6 +6,7 @@ export class RecipeTO {
     name: string;
     instructions: string;
     link: string;
+    pictureLink: string;
     userId: number;
     ingredientBlock: IngredientBlock[];
     // ingredientList: [{

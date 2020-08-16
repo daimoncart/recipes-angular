@@ -1,3 +1,4 @@
+import {MyRecipeList } from './my-recipe-list/my-recipe-list.component';
 import {RecipeService} from './service/recipe.service';
 import {RecipeFormComponent} from './recipe-form/recipe-form.component';
 import {NaviComponent} from './navi/navi.component';
@@ -39,7 +40,8 @@ import {IngredientMeasurementService} from './service/ingredient-measurment.serv
     RecipeFormComponent,
     IngredientMeasurementFormComponent,
     IngredientsMeasurementListComponent,
-    RecipeViewComponent
+    RecipeViewComponent,
+    MyRecipeList
   ],
   imports: [
     BrowserModule,

@@ -10,10 +10,12 @@
 </ul>
 </div>
 <div class="column col-sm-6">
-<img src="{{ recipe.pictureLink}}" alt="Food image" width="100%">
+<div *ngIf="recipe.pictureLink">
+    <img src="{{ recipe.pictureLink}}" alt="Food image" width="100%">
+</div>
 </div></div></div>
 How to make it: {{ recipe.instructions }}
 <div *ngIf="recipe.link" class="my-2">
-({{ recipe.link }})
+(<a href="{{ recipe.link }}">Original here</a>)
 </div>
 Author: {{ recipe.user.username }}</div>
