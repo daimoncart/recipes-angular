@@ -14,6 +14,7 @@ import {AuthGuard} from './service/auth/guards/auth.guard';
 import {Role} from './model/role';
 import {IngredientsMeasurementListComponent} from './ingredients-measurement-list/ingredients-measurement-list.component';
 import { IngredientMeasurementFormComponent } from './ingredients-measurement-form/ingredient-measurement-form.component';
+import {RecipeListComponent} from './recipes-list/recipes-list.component';
 
 const routes: Routes = [
   {canActivate: [AuthGuard], path: 'users', component: UserListComponent, data: {roles: [Role.Admin]}},
@@ -28,7 +29,8 @@ const routes: Routes = [
   {canActivate: [AuthGuard], path: 'saverecipe', component: RecipeFormComponent},
   {canActivate: [AuthGuard], path: 'ingredientsMeasurment', component: IngredientsMeasurementListComponent, data: {roles: [Role.Admin]}},
   {canActivate: [AuthGuard], path: 'saveingredientsMeasurment', component: IngredientMeasurementFormComponent, data: {roles: [Role.Admin]}},
-  {path: 'recipe/:recipeId', component: RecipeViewComponent}
+  {path: 'recipe/:recipeId', component: RecipeViewComponent},
+  {path: 'recipes', component: RecipeListComponent}
 ];
 
 @NgModule({

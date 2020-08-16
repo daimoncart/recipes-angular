@@ -3,6 +3,7 @@ import { RecipeTO } from '../model/recipe-to';
 import { Observable } from 'rxjs';
 import {SecureHttpClientService} from './secure-http-client.service';
 import { Recipe } from '../model/recipe';
+import {RecipeView} from '../model/recipe-view';
 
 @Injectable({
   providedIn: 'root'
@@ -16,13 +17,13 @@ export class RecipeService {
   private readonly url = 'http://localhost:8085';
 
   constructor(private http: SecureHttpClientService) {
-    this.recipesUrlGet = 'http://localhost:8085/recipes';
+    this.recipesUrlGet = 'http://localhost:8085/recipes/ingredients';
     this.recipeUrlPost = 'http://localhost:8085/recipe';
     this.recipesUrlByIdGet = 'http://localhost:8085/user/1/recipes';
     this.recipeById = 'http://localhost:8085/recipe/1';
   }
 
-  public findAll(): Observable<RecipeTO[]> {
+  public findAll(): Observable<RecipeView[]> {
     return this.http.get(this.recipesUrlGet);
   }
 

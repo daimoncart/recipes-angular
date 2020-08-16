@@ -1,11 +1,9 @@
 import {RecipeService} from './service/recipe.service';
 import {RecipeFormComponent} from './recipe-form/recipe-form.component';
-import {NaviComponent} from './navi/navi.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {UserListComponent} from './user-list/user-list.component';
@@ -23,6 +21,9 @@ import {IngredientsMeasurementListComponent} from './ingredients-measurement-lis
 import {IngredientMeasurementFormComponent} from './ingredients-measurement-form/ingredient-measurement-form.component';
 import {RecipeViewComponent} from './recipe-view/recipe-view.component';
 import {IngredientMeasurementService} from './service/ingredient-measurment.service';
+import {NaviComponent} from './navi/navi.component';
+import {RecipeListComponent} from './recipes-list/recipes-list.component';
+import {RecipeView} from './model/recipe-view';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {IngredientMeasurementService} from './service/ingredient-measurment.serv
     RecipeFormComponent,
     IngredientMeasurementFormComponent,
     IngredientsMeasurementListComponent,
-    RecipeViewComponent
+    RecipeViewComponent,
+    RecipeListComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,7 @@ import {IngredientMeasurementService} from './service/ingredient-measurment.serv
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [UserService, AuthService, SecureHttpClientService, RecipeService, IngredientMeasurementService],
+  providers: [UserService, AuthService, SecureHttpClientService, RecipeService, IngredientMeasurementService, RecipeView],
   bootstrap: [AppComponent]
 })
 export class AppModule {
