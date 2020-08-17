@@ -11,6 +11,16 @@
             <img src="../../assets/img/restaurant_menu-24px.svg" class="svg"> Recipes
           </a>
         </li>
+        <li class="nav-item" *ngIf="isLoggedIn()">
+          <a class="nav-link" (click)="isShown = false" routerLink="/my-recipes">
+            <img src="../../assets/img/chef-solid.svg" class="svg"> My Recipes
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn()">
+          <a class="nav-link" (click)="isShown = false" routerLink="/saverecipe">
+            <img src="../../assets/img/add_circle_outline-24px.svg" class="svg"> Add Recipe
+          </a>
+        </li>
         <li class="nav-item" *ngIf="isAdmin() && isLoggedIn()">
           <a class="nav-link" (click)="isShown = false" routerLink="/users">
             <img src="../../assets/img/people-24px.svg" class="svg"> Users

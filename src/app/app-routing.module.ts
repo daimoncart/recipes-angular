@@ -32,7 +32,7 @@ const routes: Routes = [
   {canActivate: [AuthGuard], path: 'saveingredientsMeasurment', component: IngredientMeasurementFormComponent, data: {roles: [Role.Admin]}},
   {path: 'recipe/:recipeId', component: RecipeViewComponent},
   {path: 'recipes', component: RecipeListComponent},
-  {path: 'my-recipes', component: MyRecipeListComponent}
+  {canActivate: [AuthGuard], path: 'my-recipes', component: MyRecipeListComponent}
 ];
 
 @NgModule({

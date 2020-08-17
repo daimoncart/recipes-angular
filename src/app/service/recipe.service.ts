@@ -19,6 +19,7 @@ export class RecipeService {
   public findAll(): Observable<RecipeView[]> {
     const recipeUrl = this.url + 'recipes/ingredients';
     return this.https.get<RecipeView[]>(recipeUrl);
+    // return this.https.get(recipeUrl);
   }
 
   public save(recipe: RecipeTO) {
