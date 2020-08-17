@@ -8,6 +8,7 @@
         <th scope="col">Name</th>
         <th scope="col">Username</th>
         <th scope="col">IngredientCount</th>
+        <th scope="col">Thumbnail</th>
       </tr>
       </thead>
       <tbody>
@@ -15,6 +16,7 @@
         <td>{{ recipe.name }}</td>
         <td>{{ recipe.username }}</td>
         <td>{{ recipe.ingredientCount }}</td>
+        <td><img src="{{ recipe.pictureLink?recipe.pictureLink:'../../assets/img/food.jpg' }}" class="thumb"></td>
       </tr>
       </tbody>
     </table>
