@@ -1,24 +1,27 @@
-<div class="container">
-</div>
-<div class="card my-2">
-  <div class="card-body">
-    <table class="table table-bordered table-striped">
-      <thead class="thead-dark">
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Username</th>
-        <th scope="col">Ingredients</th>
-        <th scope="col">Thumbnail</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let recipe of recipes">
-        <td>{{ recipe.name }}</td>
-        <td>{{ recipe.username }}</td>
-        <td>{{ recipe.ingredientCount }}</td>
-        <td><img src="{{ recipe.pictureLink?recipe.pictureLink:'../../assets/img/food.jpg' }}" class="thumb"></td>
-      </tr>
-      </tbody>
-    </table>
+<div *ngIf="recipes.length>0; else elseBlock">
+  <div class="card my-2">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Ingredients</th>
+            <th scope="col">Thumbnail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let recipe of recipes">
+            <td>{{ recipe.name }}</td>
+            <td>{{ recipe.username }}</td>
+            <td>{{ recipe.ingredientCount }}</td>
+            <td><img src="{{ recipe.pictureLink?recipe.pictureLink:'../../assets/img/food.jpg' }}" class="thumb"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
+<ng-template #elseBlock>
+  <h5 class="ml-3 mt-2">There are no recipes yet.</h5>
+</ng-template>
