@@ -1,3 +1,4 @@
+import { INGREDIENTS } from './../data-lists/ingredient-data';
 import { RecipeService } from '../service/recipe.service';
 // import { IngredientBlock } from '../model/ingredient-block';
 import { Component, OnInit } from '@angular/core';
@@ -6,10 +7,7 @@ import { RecipeTO } from '../model/recipe-to';
 import { ActivatedRoute, Router } from '@angular/router';
 import {Observable} from 'rxjs';
 import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
-
-const uoms = ['grams', 'piece(s)', 'pinch', 'cup(s)', 'ml', 'teaspoon(s)',
-    'tablespoon(s)', 'ounce(s)', 'liter(s)', 'handful(s)'];
-
+import { UOMS } from '../data-lists/unit-data';
 
 @Component({
     selector: 'app-recipe-form',
@@ -21,6 +19,8 @@ export class RecipeFormComponent implements OnInit {
     recipeForm: FormGroup;
     valueChangedTracked: any;
     recipe: RecipeTO = new RecipeTO();
+    uoms = UOMS;
+    ingredients = INGREDIENTS;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -80,6 +80,7 @@ export class RecipeFormComponent implements OnInit {
         this.recipeForm.valueChanges.subscribe (data => {
             this.valueChangedTracked = data;
         });
+
         // console.log(this.recipeForm.get('items').value.length);
         // console.log(this.recipeForm.get('items').value);
     }
@@ -112,6 +113,14 @@ export class RecipeFormComponent implements OnInit {
       debounceTime(200),
       distinctUntilChanged(),
       map(term => term.length < 1 ? []
-        : uoms.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+        : this.uoms.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+    )
+
+    ingredientsearch = (text$: Observable<string>) =>
+    text$.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      map(term => term.length < 3 ? []
+        : this.ingredients.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
     )
 }

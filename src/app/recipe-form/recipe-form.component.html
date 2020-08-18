@@ -41,7 +41,12 @@
                           [editable]="false">
                     </div>
                     <div class="col">
-                        <input class="form-control" type="text" formControlName="ingredient" id="item{{i}}">
+                        <input class="form-control" 
+                        type="text" formControlName="ingredient" 
+                        id="item{{i}}"
+                        [ngbTypeahead]="ingredientsearch"
+                        [editable]="false">
+                        >
                     </div>
                     <div class="col-1 my-auto">
                         <a [routerLink] (click)="removeItem(i)">X</a>

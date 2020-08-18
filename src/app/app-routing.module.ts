@@ -1,4 +1,3 @@
-import { TestComponent } from './test/test.component';
 import {MyRecipeListComponent } from './my-recipe-list/my-recipe-list.component';
 import {RecipeFormComponent} from './recipe-form/recipe-form.component';
 import {RegisterComponent} from './register/register.component';
@@ -35,8 +34,7 @@ const routes: Routes = [
   {path: 'recipe/:recipeId', component: RecipeViewComponent},
   {path: 'recipes', component: RecipeListComponent},
   {canActivate: [AuthGuard], path: 'my-recipes', component: MyRecipeListComponent},
-  {path: ':name/recipes', component: UserRecipesComponent},
-  {path: 'test', component: TestComponent}
+  {path: ':name/recipes', component: UserRecipesComponent}
 ];
 
 @NgModule({

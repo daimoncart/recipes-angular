@@ -26,7 +26,6 @@ import {NaviComponent} from './navi/navi.component';
 import {RecipeListComponent} from './recipes-list/recipes-list.component';
 import {RecipeView} from './model/recipe-view';
 import { UserRecipesComponent } from './user-recipes/user-recipes.component';
-import { TestComponent } from './test/test.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -47,8 +46,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     RecipeViewComponent,
     RecipeListComponent,
     MyRecipeListComponent,
-    UserRecipesComponent,
-    TestComponent
+    UserRecipesComponent
   ],
   imports: [
     BrowserModule,
