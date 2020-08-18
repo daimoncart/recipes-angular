@@ -1,9 +1,15 @@
 import { RecipeService } from '../service/recipe.service';
-import { IngredientBlock } from '../model/ingredient-block';
+// import { IngredientBlock } from '../model/ingredient-block';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { RecipeTO } from '../model/recipe-to';
 import { ActivatedRoute, Router } from '@angular/router';
+import {Observable} from 'rxjs';
+import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
+
+const uoms = ['grams', 'piece(s)', 'pinch', 'cup(s)', 'ml', 'teaspoon(s)',
+    'tablespoon(s)', 'ounce(s)', 'liter(s)', 'handful(s)'];
+
 
 @Component({
     selector: 'app-recipe-form',
@@ -60,7 +66,7 @@ export class RecipeFormComponent implements OnInit {
     }
 
     goSomewhere() {
-        this.router.navigate(['/saverecipe']);
+        this.router.navigate(['/my-recipes']);
       }
 
     resetForm(){
@@ -100,4 +106,12 @@ export class RecipeFormComponent implements OnInit {
     addItem(){
         this.items.push(this.createIngredientBlock());
     }
+
+    unitsearch = (text$: Observable<string>) =>
+    text$.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      map(term => term.length < 1 ? []
+        : uoms.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+    )
 }

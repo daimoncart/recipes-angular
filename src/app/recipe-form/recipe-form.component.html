@@ -34,7 +34,11 @@
                         <input class="form-control" type="number" formControlName="quantity" id="item{{i}}">
                     </div>
                     <div class="col-3">
-                        <input class="form-control" type="text" formControlName="measurementUnit" id="item{{i}}">
+                        <input class="form-control" 
+                          type="text" formControlName="measurementUnit" 
+                          id="item{{i}}" 
+                          [ngbTypeahead]="unitsearch"
+                          [editable]="false">
                     </div>
                     <div class="col">
                         <input class="form-control" type="text" formControlName="ingredient" id="item{{i}}">
