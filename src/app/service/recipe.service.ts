@@ -34,12 +34,12 @@ export class RecipeService {
 
   public findByUserName(name: string) {
     const recipeUrl = this.url + name + '/recipes';
-    return this.http.get(recipeUrl);
+    return this.https.get<Recipe[]>(recipeUrl);
   }
 
   public getRecipeById(id: number): Observable<Recipe> {
     const recipeUrl = this.url + 'recipe/' + id;
-    return this.http.get(recipeUrl);
+    return this.https.get<Recipe>(recipeUrl);
   }
 
 }

@@ -1,0 +1,25 @@
+<div class="container mt-3" *ngIf="recipes.length>0; else elseBlock">
+    <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+      <div class="col mb-4" *ngFor="let recipe of recipes">
+        <a href="{{'/recipe/' + recipe.id}}" class="text-decoration-none text-dark">
+          <div class="card h-100 bg-light mb-3 border-info">
+            <img src="{{recipe.pictureLink?recipe.pictureLink:'../../assets/img/food.jpg'}}" class="card-img-top p-2 "
+              alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{recipe.name}}</h5>
+              <p class="card-text">
+                {{recipe.instructions.length>70?recipe.instructions.substr(0, 69) + "...":recipe.instructions}}
+              </p>
+            </div>
+            <div class="card-footer justify-content-center">
+              <!-- <a href="{{'/recipe/' + recipe.id}}" class="card-link">View Recipe</a> -->
+              <p class="card-text">{{recipe.recipeIngredients.length + ' ingredient(s)'}}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <ng-template #elseBlock>
+    <h5 class="ml-3">User has no recipes yet.</h5>
+  </ng-template>

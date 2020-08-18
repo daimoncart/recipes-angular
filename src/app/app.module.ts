@@ -25,6 +25,7 @@ import {IngredientMeasurementService} from './service/ingredient-measurment.serv
 import {NaviComponent} from './navi/navi.component';
 import {RecipeListComponent} from './recipes-list/recipes-list.component';
 import {RecipeView} from './model/recipe-view';
+import { UserRecipesComponent } from './user-recipes/user-recipes.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {RecipeView} from './model/recipe-view';
     IngredientsMeasurementListComponent,
     RecipeViewComponent,
     RecipeListComponent,
-    MyRecipeListComponent
+    MyRecipeListComponent,
+    UserRecipesComponent
   ],
   imports: [
     BrowserModule,
