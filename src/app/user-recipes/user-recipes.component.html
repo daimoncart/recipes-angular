@@ -1,25 +1,29 @@
 <div class="container mt-3" *ngIf="recipes.length>0; else elseBlock">
-    <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
-      <div class="col mb-4" *ngFor="let recipe of recipes">
-        <a href="{{'/recipe/' + recipe.id}}" class="text-decoration-none text-dark">
-          <div class="card h-100 bg-light mb-3 border-info">
-            <img src="{{recipe.pictureLink?recipe.pictureLink:'../../assets/img/food.jpg'}}" class="card-img-top p-2 "
-              alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{recipe.name}}</h5>
-              <p class="card-text">
-                {{recipe.instructions.length>70?recipe.instructions.substr(0, 69) + "...":recipe.instructions}}
-              </p>
-            </div>
-            <div class="card-footer justify-content-center">
-              <!-- <a href="{{'/recipe/' + recipe.id}}" class="card-link">View Recipe</a> -->
-              <p class="card-text">{{recipe.recipeIngredients.length + ' ingredient(s)'}}</p>
-            </div>
+  <h3>Recipes by <span class="name">{{ recipes[0].user.username | uppercase }}</span></h3>
+  <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 ">
+    <div class="col mb-4 maxwidth text-center" *ngFor="let recipe of recipes">
+      <a href="{{'/recipe/' + recipe.id}}" class="text-decoration-none text-dark">
+        <div class="card my-card h-100 mb-3 border-info border-2">
+          <div class="top-image text-center"><img src="{{recipe.pictureLink?recipe.pictureLink:'../../assets/img/food.jpg'}}"
+              class="card-img-top recipe-image cropped-image" alt="..."></div>
+          <div class="card-body">
+            <h4 class="card-title text-center">{{recipe.name}}</h4>
+            <!-- <p class="card-text card-text-subdued">
+              {{recipe.instructions.length>70?recipe.instructions.substr(0, 69) + "...":recipe.instructions}}
+            </p> -->
           </div>
-        </a>
-      </div>
+          <div class="card-footer text-center">
+            <p class="card-text">{{
+              recipe.recipeIngredients.length>1 ?
+              recipe.recipeIngredients.length + ' ingredients' :
+              '1 ingredient'
+            }}</p>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
-  <ng-template #elseBlock>
-    <h5 class="ml-3">User has no recipes yet.</h5>
-  </ng-template>
+</div>
+<ng-template #elseBlock>
+  <h5 class="ml-3">The user no recipes yet.</h5>
+</ng-template>

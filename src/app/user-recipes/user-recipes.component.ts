@@ -6,7 +6,8 @@ import {Component, OnInit} from '@angular/core';
 @Component({
     selector: 'app-user-recipes',
     templateUrl: './user-recipes.component.html',
-    styleUrls: ['./user-recipes.component.css']
+    styleUrls: ['../recipes-list/recipes-list.component.css'],
+    styles: ['.name {font-weight: 800; color: #17a2b8; font-size: 2.1rem;}']
 })
 
 export class UserRecipesComponent implements OnInit{
