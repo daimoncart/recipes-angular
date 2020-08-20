@@ -17,6 +17,7 @@ import {IngredientsMeasurementListComponent} from './ingredients-measurement-lis
 import { IngredientMeasurementFormComponent } from './ingredients-measurement-form/ingredient-measurement-form.component';
 import {RecipeListComponent} from './recipes-list/recipes-list.component';
 import { UserRecipesComponent } from './user-recipes/user-recipes.component';
+import { NotFoundComponent } from './not-found-component/not-found-component.component';
 
 const routes: Routes = [
   {canActivate: [AuthGuard], path: 'users', component: UserListComponent, data: {roles: [Role.Admin]}},
@@ -34,7 +35,9 @@ const routes: Routes = [
   {path: 'recipe/:recipeId', component: RecipeViewComponent},
   {path: 'recipes', component: RecipeListComponent},
   {canActivate: [AuthGuard], path: 'my-recipes', component: MyRecipeListComponent},
-  {path: ':name/recipes', component: UserRecipesComponent}
+  {path: ':name/recipes', component: UserRecipesComponent},
+  {path: '404', component: NotFoundComponent},
+  {path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({

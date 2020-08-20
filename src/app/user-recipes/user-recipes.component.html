@@ -1,5 +1,5 @@
 <div class="container mt-3" *ngIf="recipes.length>0; else elseBlock">
-  <h3>Recipes by <span class="name">{{ recipes[0].user.username | uppercase }}</span></h3>
+  <h3>Recipes by <span class="name">{{ recipes[0].user.username | uppercase }}</span> ({{ recipes.length }})</h3>
   <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 ">
     <div class="col mb-4 maxwidth text-center" *ngFor="let recipe of recipes">
       <a href="{{'/recipe/' + recipe.id}}" class="text-decoration-none text-dark">

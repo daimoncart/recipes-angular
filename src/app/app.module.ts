@@ -1,3 +1,4 @@
+import { NotFoundComponent } from './not-found-component/not-found-component.component';
 import {MyRecipeListComponent } from './my-recipe-list/my-recipe-list.component';
 import {RecipeService} from './service/recipe.service';
 import {RecipeFormComponent} from './recipe-form/recipe-form.component';
@@ -46,7 +47,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     RecipeViewComponent,
     RecipeListComponent,
     MyRecipeListComponent,
-    UserRecipesComponent
+    UserRecipesComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
