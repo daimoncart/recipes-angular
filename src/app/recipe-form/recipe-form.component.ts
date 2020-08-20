@@ -31,7 +31,7 @@ export class RecipeFormComponent implements OnInit {
 
         this.recipeForm = formBuilder.group({
             // name: new FormControl,
-            name: ['', Validators.required],
+            name: ['', [Validators.required, Validators.maxLength(45)]],
             // instructions: new FormControl,
             instructions: ['', [Validators.required, Validators.minLength(10)]],
             link: new FormControl(),
@@ -121,6 +121,6 @@ export class RecipeFormComponent implements OnInit {
       debounceTime(200),
       distinctUntilChanged(),
       map(term => term.length < 3 ? []
-        : this.ingredients.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+        : this.ingredients.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 20))
     )
 }
