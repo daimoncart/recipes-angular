@@ -16,7 +16,10 @@
             <div class="form-check" *ngFor="let item of recipe.recipeIngredients">
                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                 <label class="form-check-label" for="defaultCheck1">
-                    {{item.quantity}} {{ item.measurementUnit.name }} of {{item.ingredient.name}}
+                  {{item.quantity}}
+                  <span *ngIf="item.measurementUnit.name != 'piece'">{{ item.measurementUnit.name }}</span>
+                  <span *ngIf="item.quantity > 1 && item.measurementUnit.name != 'piece'">s</span>
+                  {{item.ingredient.name}}<span *ngIf="item.quantity > 1 && item.measurementUnit.name == 'piece'">s</span>
                 </label>
             </div>
         </div>
