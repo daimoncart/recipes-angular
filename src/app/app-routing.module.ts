@@ -29,7 +29,7 @@ const routes: Routes = [
   {canActivate: [AuthGuard], path: 'saveuom', component: UomFormComponent, data: {roles: [Role.Admin]}},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: '', component: RecipeListComponent},
+  {path: '', component: HomeComponent},
   {canActivate: [AuthGuard], path: 'saverecipe', component: RecipeFormComponent},
   {canActivate: [AuthGuard], path: 'ingredientsMeasurment', component: IngredientsMeasurementListComponent, data: {roles: [Role.Admin]}},
   {canActivate: [AuthGuard], path: 'saveingredientsMeasurment', component: IngredientMeasurementFormComponent, data: {roles: [Role.Admin]}},
@@ -38,7 +38,6 @@ const routes: Routes = [
   {canActivate: [AuthGuard], path: 'my-recipes', component: MyRecipeListComponent},
   {path: ':name/recipes', component: UserRecipesComponent},
   {path: '404', component: NotFoundComponent},
-  {path: 'home', component: HomeComponent},
   {path: '**', redirectTo: '/404'}
 ];
 
