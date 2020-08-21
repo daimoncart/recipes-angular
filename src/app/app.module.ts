@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found-component/not-found-component.component';
 import {MyRecipeListComponent } from './my-recipe-list/my-recipe-list.component';
 import {RecipeService} from './service/recipe.service';
@@ -48,7 +49,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     RecipeListComponent,
     MyRecipeListComponent,
     UserRecipesComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

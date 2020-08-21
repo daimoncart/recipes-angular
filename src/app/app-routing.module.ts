@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import {MyRecipeListComponent } from './my-recipe-list/my-recipe-list.component';
 import {RecipeFormComponent} from './recipe-form/recipe-form.component';
 import {RegisterComponent} from './register/register.component';
@@ -37,6 +38,7 @@ const routes: Routes = [
   {canActivate: [AuthGuard], path: 'my-recipes', component: MyRecipeListComponent},
   {path: ':name/recipes', component: UserRecipesComponent},
   {path: '404', component: NotFoundComponent},
+  {path: 'home', component: HomeComponent},
   {path: '**', redirectTo: '/404'}
 ];
 
