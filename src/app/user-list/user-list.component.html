@@ -9,6 +9,8 @@
             <th scope="col">Id</th>
             <th scope="col">Username</th>
             <th scope="col">Email</th>
+            <th scope="col">Role</th>
+            <th class="text-center" scope="col" style="width: 17%">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -16,6 +18,11 @@
             <td>{{ user.id }}</td>
             <td>{{ user.username }}</td>
             <td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
+            <td>{{ getUserRole(user) }}</td>
+            <td>
+              <button class="btn btn-info btn-primary btn-block" (click)="changeUserRole(user.id)" *ngIf="getUserRole(user) == 'USER'">Make Admin</button>
+              <button class="btn btn-info btn-success btn-block" (click)="changeUserRole(user.id)" *ngIf="getUserRole(user) == 'ADMIN'">Make User</button>
+            </td>
           </tr>
         </tbody>
       </table>

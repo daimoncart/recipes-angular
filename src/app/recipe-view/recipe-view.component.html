@@ -1,26 +1,31 @@
 <div *ngIf="recipe">
-    <div class="mt-2 mb-1 name">
-        {{ recipe.name | uppercase }}
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="column col-sm-6 ingr">
-                <ul>
-                    <li *ngFor="let item of recipe.recipeIngredients">
-                        {{item.quantity}} {{ item.measurementUnit.name }} of {{item.ingredient.name}}
-                    </li>
-                </ul>
-            </div>
-            <div class="column col-sm-6">
-                <div *ngIf="recipe.pictureLink">
-                    <img src="{{ recipe.pictureLink}}" alt="Food image" width="100%">
-                </div>
-            </div>
+  <div class="mt-2 mb-1 name">
+    {{ recipe.name | uppercase }}
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="column col-sm-6 ingr">
+        <ul>
+          <li *ngFor="let item of recipe.recipeIngredients">
+            {{item.quantity}}
+            <span *ngIf="item.measurementUnit.name != 'piece'">{{ item.measurementUnit.name }}</span>
+            <span *ngIf="item.quantity > 1 && item.measurementUnit.name != 'piece'">s</span>
+            {{item.ingredient.name}}<span *ngIf="item.quantity > 1 && item.measurementUnit.name == 'piece'">s</span>
+          </li>
+        </ul>
+      </div>
+      <div class="column col-sm-6">
+        <div *ngIf="recipe.pictureLink">
+          <img src="{{ recipe.pictureLink}}" alt="Food image" width="100%">
         </div>
+      </div>
     </div>
-    How to make it: {{ recipe.instructions }}
-    <div *ngIf="recipe.link" class="my-2">
-        (<a href="{{ recipe.link }}">Original here</a>)
-    </div>
-    Author: {{ recipe.user.username }}
+  </div>
+  <div class="instructions">
+    How to make it: <br>{{ recipe.instructions }}
+  </div>
+  <div *ngIf="recipe.link" class="my-2">
+    (<a href="{{ recipe.link }}">Original here</a>)
+  </div>
+  Author: {{ recipe.user.username }}
 </div>

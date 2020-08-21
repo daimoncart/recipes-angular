@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
-import { User } from '../model/user';
-import { Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {User} from '../model/user';
+import {Observable} from 'rxjs';
 import {SecureHttpClientService} from './secure-http-client.service';
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class UserService {
@@ -20,7 +21,10 @@ export class UserService {
     return this.http.get(this.usersUrlGet);
   }
 
-  public save(user: User) {
-    return this.http.post(this.userUrlPost, user);
+  public changeRole(id: number) {
+    console.log("Http Sent!");
+    console.log(id);
+    return this.http.post(`${environment.apiUrl}/user`, id);
   }
+
 }
