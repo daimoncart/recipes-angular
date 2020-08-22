@@ -6,12 +6,13 @@ import { Recipe } from '../model/recipe';
 @Component ({
     selector: 'app-my-recipe-list',
     templateUrl: './my-recipe-list.component.html',
-    styleUrls: ['../recipes-list/recipes-list.component.css']
+    styleUrls: ['../recipes-list/recipes-list.component.css', '../recipe-form/recipe-form.component.css']
 })
 
 export class MyRecipeListComponent implements OnInit {
 
     recipes: Recipe[] = [];
+    isRequestInProgress = true;
 
     constructor(
        private recipeService: RecipeService
@@ -20,6 +21,8 @@ export class MyRecipeListComponent implements OnInit {
     ngOnInit(): void {
         this.recipeService.findMyRecipes().subscribe(data => {
             this.recipes = data;
+            this.isRequestInProgress = false;
           });
+
     }
 }

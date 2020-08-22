@@ -26,8 +26,7 @@
         <div class="emphasized">
             Instructions:
         </div>
-        <div class="container ingr">
-            {{ recipe.instructions }}
+        <div class="container ingr" [innerHTML]="recipe.instructions">
         </div>
         <div *ngIf="recipe.link" class="my-2 ingr container">
             (<a href="{{ recipe.link }}">Original here</a>)

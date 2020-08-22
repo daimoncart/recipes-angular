@@ -20,3 +20,8 @@ textarea.ng-touched.ng-invalid {
   ::-ms-input-placeholder { /* Microsoft Edge */
    color: #cee;
   }
+
+  .else-block {
+      width: 10rem;
+      height: auto;
+  }
