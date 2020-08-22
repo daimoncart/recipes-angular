@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:8085'
+  apiUrl: 'https://guarded-wildwood-44151.herokuapp.com'
 };
