@@ -49,5 +49,6 @@
   </div> -->
 </div>
 <ng-template #elseBlock>
-  <h5 class="ml-3 mt-2">There are no recipes yet.</h5>
+  <h5 class="ml-3 mt-2" *ngIf='!isRequestInProgress'>There are no recipes yet.</h5>
+  <img *ngIf='isRequestInProgress' src="../../assets/img/loading.gif"  class="d-block m-auto else-block">
 </ng-template>

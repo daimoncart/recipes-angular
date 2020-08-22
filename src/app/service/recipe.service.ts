@@ -34,7 +34,7 @@ export class RecipeService {
   }
 
   public findByUserName(name: string) {
-    const recipeUrl = this.url + name + '/recipes';
+    const recipeUrl = this.url + '/' + name + '/recipes';
     return this.https.get<Recipe[]>(recipeUrl);
   }
 
