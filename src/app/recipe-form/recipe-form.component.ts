@@ -48,6 +48,7 @@ export class RecipeFormComponent implements OnInit {
         // console.log(this.recipeForm.value);
         // this.recipe.name = this.recipeForm.value.name;
         // this.recipe.instructions = this.recipeForm.value.instructions;
+        console.log(this.recipeForm.getRawValue());
         this.recipe = this.recipeForm.getRawValue();
         // this.recipe.link = this.recipeForm.value.link;
         // const temp = Array<IngredientBlock>();
