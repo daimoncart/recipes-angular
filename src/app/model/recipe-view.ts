@@ -3,4 +3,5 @@ export class RecipeView {
   name: string;
   username: string;
   ingredientCount: number;
+  pictureLink: string;
 }

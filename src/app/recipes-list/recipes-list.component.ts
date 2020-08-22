@@ -5,16 +5,18 @@ import {RecipeService} from '../service/recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
-  templateUrl: './recipes-list.component.html'
+  templateUrl: './recipes-list.component.html',
+  styleUrls: ['./recipes-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  recipes: RecipeView[];
+  recipes: RecipeView[] = [];
 
   constructor(private recipeService: RecipeService) {
   }
 
   ngOnInit() {
     this.recipeService.findAll().subscribe(data => {
+      console.log(data);
       this.recipes = data;
     });
   }

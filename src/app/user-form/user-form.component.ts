@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../service/user.service';
 import { User } from '../model/user';
+import {LoginRegisterService} from "../service/login-register.service";
 
 @Component({
   selector: 'app-user-form',
@@ -15,12 +16,13 @@ export class UserFormComponent {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private userService: UserService) {
+    private userService: UserService,
+    private registerService: LoginRegisterService) {
     this.user = new User();
   }
 
   onSubmit() {
-    this.userService.save(this.user).subscribe(result => this.gotoUserList());
+    this.registerService.register(this.user).subscribe(result => this.gotoUserList());
   }
 
   gotoUserList() {

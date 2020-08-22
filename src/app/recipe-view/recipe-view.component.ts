@@ -9,7 +9,10 @@ import { Recipe } from '../model/recipe';
     templateUrl: './recipe-view.component.html',
     styles: [
         '.ingr {background-color: #eff}',
-        '.name {font-weight: 800; color: #17a2b8; font-size: 2.1rem;}']
+        '.name {font-weight: 800; color: #17a2b8; font-size: 2.1rem;}',
+        '.emphasized {font-weight: 500; color: black; font-size: 1.2rem; margin-top: 1.2rem;}',
+        'a {color: #3ad4da;}',
+        '.food-image {   width: 100%; height: auto;}']
 })
 
 export class RecipeViewComponent implements OnInit {

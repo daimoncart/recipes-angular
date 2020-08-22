@@ -1,21 +1,43 @@
 <div *ngIf="recipe">
     <div class="mt-2 mb-1 name">
-{{ recipe.name | uppercase }}
+        {{ recipe.name | uppercase }}
+    </div>
+
+    <div>
+        <div *ngIf="recipe.pictureLink">
+            <div >
+                <img src="{{ recipe.pictureLink}}" alt="Food image" class="food-image">
+            </div>
+        </div>
+        <div class="emphasized">
+            Ingredients:
+        </div>
+        <div class="container ingr">
+            <div class="form-check" *ngFor="let item of recipe.recipeIngredients">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  {{item.quantity}}
+                  <span *ngIf="item.measurementUnit.name != 'piece'">{{ item.measurementUnit.name }}</span>
+                  <span *ngIf="item.quantity > 1 && item.measurementUnit.name != 'piece'">s</span>
+                  {{item.ingredient.name}}<span *ngIf="item.quantity > 1 && item.measurementUnit.name == 'piece'">s</span>
+                </label>
+            </div>
+        </div>
+        <div class="emphasized">
+            Instructions:
+        </div>
+        <div class="container ingr">
+            {{ recipe.instructions }}
+        </div>
+        <div *ngIf="recipe.link" class="my-2 ingr container">
+            (<a href="{{ recipe.link }}">Original here</a>)
+        </div>
+        <div class="emphasized">
+            <span>Author: </span>
+        </div>
+        <div class="container ingr">
+            <a href="/{{recipe.user.username}}/recipes">{{recipe.user.username}}</a>
+        </div>
+        <hr>
+    </div>
 </div>
-<div class="container"><div class="row"><div class="column col-sm-6 ingr">
-<ul>
-<li *ngFor="let item of recipe.recipeIngredients">
-{{item.quantity}} {{ item.measurementUnit.name }} of {{item.ingredient.name}}
-</li>
-</ul>
-</div>
-<div class="column col-sm-6">
-<div *ngIf="recipe.pictureLink">
-    <img src="{{ recipe.pictureLink}}" alt="Food image" width="100%">
-</div>
-</div></div></div>
-How to make it: {{ recipe.instructions }}
-<div *ngIf="recipe.link" class="my-2">
-(<a href="{{ recipe.link }}">Original here</a>)
-</div>
-Author: {{ recipe.user.username }}</div>

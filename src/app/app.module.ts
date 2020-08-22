@@ -1,4 +1,6 @@
-import {MyRecipeList } from './my-recipe-list/my-recipe-list.component';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found-component/not-found-component.component';
+import {MyRecipeListComponent } from './my-recipe-list/my-recipe-list.component';
 import {RecipeService} from './service/recipe.service';
 import {RecipeFormComponent} from './recipe-form/recipe-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -22,10 +24,11 @@ import {IngredientsMeasurementListComponent} from './ingredients-measurement-lis
 import {IngredientMeasurementFormComponent} from './ingredients-measurement-form/ingredient-measurement-form.component';
 import {RecipeViewComponent} from './recipe-view/recipe-view.component';
 import {IngredientMeasurementService} from './service/ingredient-measurment.service';
-import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import {NaviComponent} from './navi/navi.component';
 import {RecipeListComponent} from './recipes-list/recipes-list.component';
 import {RecipeView} from './model/recipe-view';
+import { UserRecipesComponent } from './user-recipes/user-recipes.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import {RecipeView} from './model/recipe-view';
     IngredientsMeasurementListComponent,
     RecipeViewComponent,
     RecipeListComponent,
-    MyRecipeList
+    MyRecipeListComponent,
+    UserRecipesComponent,
+    NotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +58,7 @@ import {RecipeView} from './model/recipe-view';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AutocompleteLibModule
+    NgbModule
   ],
   providers: [UserService, AuthService, SecureHttpClientService, RecipeService, IngredientMeasurementService, RecipeView],
   bootstrap: [AppComponent]

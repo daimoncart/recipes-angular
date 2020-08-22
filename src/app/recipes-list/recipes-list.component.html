@@ -1,22 +1,53 @@
-<div class="container">
-</div>
-<div class="card my-2">
-  <div class="card-body">
-    <table class="table table-bordered table-striped">
-      <thead class="thead-dark">
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Username</th>
-        <th scope="col">IngredientCount</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let recipes of recipes">
-        <td>{{ recipes.name }}</td>
-        <td>{{ recipes.username }}</td>
-        <td>{{ recipes.ingredientCount }}</td>
-      </tr>
-      </tbody>
-    </table>
+<div *ngIf="recipes.length>0; else elseBlock" class="mt-2">
+  <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 ">
+    <div class="col mb-4 maxwidth text-center" *ngFor="let recipe of recipes">
+      <a href="{{'/recipe/' + recipe.id}}" class="text-decoration-none text-dark">
+        <div class="card h-100 mb-3 border-info border-2"
+        [ngClass]="{'my-card-7 ': recipe.ingredientCount>=7,
+          'my-card-4': recipe.ingredientCount >=4 && recipe.ingredientCount <7,
+          'my-card': recipe.ingredientCount <4}">
+          <div class="top-image text-center"><img src="{{recipe.pictureLink?recipe.pictureLink:'../../assets/img/food.jpg'}}"
+              class="card-img-top recipe-image cropped-image" alt="..."></div>
+          <div class="card-body">
+            <h4 class="card-title text-center">{{recipe.name}}</h4>
+            <!-- <p class="card-text card-text-subdued">
+              {{recipe.instructions.length>70?recipe.instructions.substr(0, 69) + "...":recipe.instructions}}
+            </p> -->
+          </div>
+          <div class="card-footer text-center">
+            <p class="card-text">{{
+              recipe.ingredientCount>1 ?
+              recipe.ingredientCount + ' ingredients' :
+              '1 ingredient'
+            }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
   </div>
+  <!-- <div class="card my-2">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Recipe Name</th>
+            <th scope="col">Author</th>
+            <th scope="col">Ingredients</th>
+            <th scope="col">Thumbnail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let recipe of recipes">
+            <td><a href="{{ '/recipe/'+ recipe.id }}">{{ recipe.name }}</a></td>
+            <td>{{ recipe.username }}</td>
+            <td>{{ recipe.ingredientCount }}</td>
+            <td><img src="{{ recipe.pictureLink?recipe.pictureLink:'../../assets/img/food.jpg' }}" class="thumb"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> -->
 </div>
+<ng-template #elseBlock>
+  <h5 class="ml-3 mt-2">There are no recipes yet.</h5>
+</ng-template>

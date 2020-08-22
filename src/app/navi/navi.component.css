@@ -12,7 +12,7 @@ a:hover {
 
 .svg {
     display: inline-block;
-    width: 1rem;
+    height: .9rem;
     overflow: hidden;
     fill: white;
 }

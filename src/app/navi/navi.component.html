@@ -6,9 +6,19 @@
 
     <div class="collapse mr-auto navbar-collapse justify-content-end" [ngClass]="{ 'show': isShown }" id="navbar-x" >
       <ul class="nav navbar-nav justify-content-end">
-        <li class="nav-item" *ngIf="isAdmin() && isLoggedIn()">
+        <li class="nav-item" *ngIf="isLoggedIn()">
           <a class="nav-link" (click)="isShown = false" routerLink="/recipes">
             <img src="../../assets/img/restaurant_menu-24px.svg" class="svg"> Recipes
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn()">
+          <a class="nav-link" (click)="isShown = false" routerLink="/my-recipes">
+            <img src="../../assets/img/chef-solid.svg" class="svg"> My Recipes
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn()">
+          <a class="nav-link" (click)="isShown = false" routerLink="/saverecipe">
+            <img src="../../assets/img/add_circle_outline-24px.svg" class="svg"> Add Recipe
           </a>
         </li>
         <li class="nav-item" *ngIf="isAdmin() && isLoggedIn()">
@@ -16,17 +26,17 @@
             <img src="../../assets/img/people-24px.svg" class="svg"> Users
           </a>
         </li>
-        <li class="nav-item" *ngIf="isLoggedIn()">
+        <li class="nav-item" *ngIf="isAdmin() && isLoggedIn()" hidden>
           <a class="nav-link" (click)="isShown = false" routerLink="/ingredients">
             <img src="../../assets/img/scatter_plot-24px.svg" class="svg"> Ingredients
           </a>
         </li>
-        <li class="nav-item" *ngIf="isAdmin() && isLoggedIn()">
+        <li class="nav-item" *ngIf="isAdmin() && isLoggedIn()" hidden>
           <a class="nav-link" (click)="isShown = false" routerLink="/uoms">
             <img src="../../assets/img/architecture-24px.svg" class="svg"> Units
           </a>
         </li>
-        <li class="nav-item" *ngIf="isAdmin() && isLoggedIn()">
+        <li class="nav-item" *ngIf="isAdmin() && isLoggedIn()" hidden>
           <a class="nav-link" (click)="isShown = false" routerLink="/ingredientsMeasurment">
             <img src="../../assets/img/line_weight-24px.svg" class="svg"> Ingredients-measurement
           </a>
