@@ -6,7 +6,7 @@ import { Recipe } from '../model/recipe';
 @Component ({
     selector: 'app-my-recipe-list',
     templateUrl: './my-recipe-list.component.html',
-    styleUrls: ['../recipes-list/recipes-list.component.css', '../recipe-form/recipe-form.component.css']
+    styleUrls: ['../recipes-list/recipes-list.component.css']
 })
 
 export class MyRecipeListComponent implements OnInit {

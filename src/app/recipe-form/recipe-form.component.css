@@ -21,7 +21,3 @@ textarea.ng-touched.ng-invalid {
    color: #cee;
   }
 
-  .else-block {
-      width: 10rem;
-      height: auto;
-  }
