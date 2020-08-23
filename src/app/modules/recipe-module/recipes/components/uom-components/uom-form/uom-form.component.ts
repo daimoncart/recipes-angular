@@ -1,6 +1,6 @@
-import { UomService } from '../service/uom.service';
+import { UomService } from '../../../../../../service/uom.service';
 import { Component, OnInit } from '@angular/core';
-import {Uom} from './../model/uom';
+import {Uom} from '../../../../../../model/uom';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

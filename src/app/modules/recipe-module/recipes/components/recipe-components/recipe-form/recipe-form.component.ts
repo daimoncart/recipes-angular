@@ -1,13 +1,13 @@
-import { INGREDIENTS } from './../data-lists/ingredient-data';
-import { RecipeService } from '../service/recipe.service';
+import { INGREDIENTS } from '../../../../../../data-lists/ingredient-data';
+import { RecipeService } from '../../../../../../service/recipe.service';
 // import { IngredientBlock } from '../model/ingredient-block';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
-import { RecipeTO } from '../model/recipe-to';
+import { RecipeTO } from '../../../../../../model/recipe-to';
 import { ActivatedRoute, Router } from '@angular/router';
 import {Observable} from 'rxjs';
 import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
-import { UOMS } from '../data-lists/unit-data';
+import { UOMS } from '../../../../../../data-lists/unit-data';
 
 @Component({
     selector: 'app-recipe-form',

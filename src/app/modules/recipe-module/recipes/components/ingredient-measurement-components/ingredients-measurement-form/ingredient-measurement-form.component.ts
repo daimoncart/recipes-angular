@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {IngredientMeasurement} from '../model/ingredientMeasurement';
+import {IngredientMeasurement} from '../../../../../../model/ingredientMeasurement';
 
-import {UomService} from '../service/uom.service';
-import {Ingredient} from '../model/ingredient';
-import {Uom} from '../model/uom';
-import {IngredientService} from '../service/ingredient.service';
-import {IngredientMeasurementService} from '../service/ingredient-measurment.service';
+import {UomService} from '../../../../../../service/uom.service';
+import {Ingredient} from '../../../../../../model/ingredient';
+import {Uom} from '../../../../../../model/uom';
+import {IngredientService} from '../../../../../../service/ingredient.service';
+import {IngredientMeasurementService} from '../../../../../../service/ingredient-measurment.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({

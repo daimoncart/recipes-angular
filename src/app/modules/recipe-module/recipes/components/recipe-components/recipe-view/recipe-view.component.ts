@@ -1,7 +1,7 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { RecipeService } from '../service/recipe.service';
-import { Recipe } from '../model/recipe';
+import { RecipeService } from '../../../../../../service/recipe.service';
+import { Recipe } from '../../../../../../model/recipe';
 
 
 @Component({

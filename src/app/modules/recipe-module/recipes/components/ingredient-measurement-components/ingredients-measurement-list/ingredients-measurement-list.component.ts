@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {IngredientMeasurement} from '../model/ingredientMeasurement';
-import {IngredientMeasurementService} from '../service/ingredient-measurment.service';
+import {IngredientMeasurement} from '../../../../../../model/ingredientMeasurement';
+import {IngredientMeasurementService} from '../../../../../../service/ingredient-measurment.service';
 
 
 @Component({

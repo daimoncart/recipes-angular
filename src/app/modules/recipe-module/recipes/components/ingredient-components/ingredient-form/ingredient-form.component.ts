@@ -1,6 +1,6 @@
-import { IngredientService } from '../service/ingredient.service';
+import { IngredientService } from '../../../../../../service/ingredient.service';
 import { Component, OnInit } from '@angular/core';
-import { Ingredient} from '../model/ingredient';
+import { Ingredient} from '../../../../../../model/ingredient';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
