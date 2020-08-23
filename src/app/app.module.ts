@@ -1,6 +1,6 @@
-import { HomeComponent } from './home/home.component';
-import { NotFoundComponent } from './not-found-component/not-found-component.component';
-import {MyRecipeListComponent } from './my-recipe-list/my-recipe-list.component';
+import {HomeComponent} from './home/home.component';
+import {NotFoundComponent} from './not-found-component/not-found-component.component';
+import {MyRecipeListComponent} from './my-recipe-list/my-recipe-list.component';
 import {RecipeService} from './service/recipe.service';
 import {RecipeFormComponent} from './recipe-form/recipe-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -16,8 +16,6 @@ import {IngredientListComponent} from './ingredient-list/ingredient-list.compone
 import {IngredientFormComponent} from './ingredient-form/ingredient-form.component';
 import {UomListComponent} from './uom-list/uom-list.component';
 import {UomFormComponent} from './uom-form/uom-form.component';
-import {LoginComponent} from './login/login.component';
-import {RegisterComponent} from './register/register.component';
 import {AuthService} from './service/auth.service';
 import {SecureHttpClientService} from './service/secure-http-client.service';
 import {IngredientsMeasurementListComponent} from './ingredients-measurement-list/ingredients-measurement-list.component';
@@ -27,8 +25,9 @@ import {IngredientMeasurementService} from './service/ingredient-measurment.serv
 import {NaviComponent} from './navi/navi.component';
 import {RecipeListComponent} from './recipes-list/recipes-list.component';
 import {RecipeView} from './model/recipe-view';
-import { UserRecipesComponent } from './user-recipes/user-recipes.component';
+import {UserRecipesComponent} from './user-recipes/user-recipes.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {AuthorizationModule} from './modules/authorization/authorization.module';
 
 @NgModule({
   declarations: [
@@ -40,8 +39,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     UomListComponent,
     UomFormComponent,
     NaviComponent,
-    LoginComponent,
-    RegisterComponent,
     RecipeFormComponent,
     IngredientMeasurementFormComponent,
     IngredientsMeasurementListComponent,
@@ -54,11 +51,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    AuthorizationModule,
+    AppRoutingModule // must stay as the last import
   ],
   providers: [UserService, AuthService, SecureHttpClientService, RecipeService, IngredientMeasurementService, RecipeView],
   bootstrap: [AppComponent]
