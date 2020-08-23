@@ -9,8 +9,6 @@ import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {UserListComponent} from './user-list/user-list.component';
-import {UserFormComponent} from './user-form/user-form.component';
 import {UserService} from './service/user.service';
 import {IngredientListComponent} from './ingredient-list/ingredient-list.component';
 import {IngredientFormComponent} from './ingredient-form/ingredient-form.component';
@@ -32,8 +30,6 @@ import {AuthorizationModule} from './modules/authorization/authorization.module'
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent,
-    UserFormComponent,
     IngredientListComponent,
     IngredientFormComponent,
     UomListComponent,
@@ -56,7 +52,7 @@ import {AuthorizationModule} from './modules/authorization/authorization.module'
     ReactiveFormsModule,
     NgbModule,
     AuthorizationModule,
-    AppRoutingModule // must stay as the last import
+    AppRoutingModule
   ],
   providers: [UserService, AuthService, SecureHttpClientService, RecipeService, IngredientMeasurementService, RecipeView],
   bootstrap: [AppComponent]

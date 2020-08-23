@@ -7,8 +7,6 @@ import {IngredientFormComponent} from './ingredient-form/ingredient-form.compone
 import {IngredientListComponent} from './ingredient-list/ingredient-list.component';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {UserListComponent} from './user-list/user-list.component';
-import {UserFormComponent} from './user-form/user-form.component';
 import {RecipeViewComponent} from './recipe-view/recipe-view.component';
 import {AuthGuard} from './service/auth/guards/auth.guard';
 import {Role} from './model/role';
@@ -19,8 +17,6 @@ import {UserRecipesComponent} from './user-recipes/user-recipes.component';
 import {NotFoundComponent} from './not-found-component/not-found-component.component';
 
 const routes: Routes = [
-  {canActivate: [AuthGuard], path: 'users', component: UserListComponent, data: {roles: [Role.Admin]}},
-  {canActivate: [AuthGuard], path: 'saveuser', component: UserFormComponent},
   {canActivate: [AuthGuard], path: 'ingredients', component: IngredientListComponent, data: {roles: [Role.Admin]}},
   {canActivate: [AuthGuard], path: 'saveingredient', component: IngredientFormComponent, data: {roles: [Role.Admin]}},
   {canActivate: [AuthGuard], path: 'uoms', component: UomListComponent, data: {roles: [Role.Admin]}},
