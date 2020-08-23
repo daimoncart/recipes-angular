@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import {Injectable} from '@angular/core';
 import {SecureHttpClientService} from './secure-http-client.service';
 import {Observable} from 'rxjs';
@@ -11,8 +12,8 @@ export class IngredientMeasurementService {
   private ingredientsMeasurmentUrlPost: string;
 
   constructor(private secureHttpClientService: SecureHttpClientService) {
-    this.ingredientsMeasurmentUrlGet = 'http://localhost:8085/ingredient-measurement-units';
-    this.ingredientsMeasurmentUrlPost = 'http://localhost:8085/ingredient-measurement-unit';
+    this.ingredientsMeasurmentUrlGet = environment.apiUrl + '/ingredient-measurement-units';
+    this.ingredientsMeasurmentUrlPost = environment.apiUrl + '/ingredient-measurement-unit';
   }
 
   public findAll(): Observable<IngredientMeasurement[]> {

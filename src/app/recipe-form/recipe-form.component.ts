@@ -22,6 +22,8 @@ export class RecipeFormComponent implements OnInit {
     uoms = UOMS;
     ingredients = INGREDIENTS;
 
+    isRequestInProgress = false;
+
     constructor(
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
@@ -44,6 +46,10 @@ export class RecipeFormComponent implements OnInit {
     }
 
     onSubmit(recipeForm: FormGroup){
+        if (this.isRequestInProgress) {
+          return;
+        }
+
                 // console.log(this.recipeForm.value.name);
         // console.log(this.recipeForm.value);
         // this.recipe.name = this.recipeForm.value.name;
@@ -62,6 +68,7 @@ export class RecipeFormComponent implements OnInit {
         // this.recipe.ingredientBlock = temp;
         console.log(this.recipe);
 
+        this.isRequestInProgress = true;
         this.recipeService.save(this.recipe).subscribe(result => this.goSomewhere());
     }
 

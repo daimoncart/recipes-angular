@@ -1,8 +1,8 @@
-import {Ingredient} from '../model/ingredient';
-import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs';
+import { Ingredient } from '../model/ingredient';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import {SecureHttpClientService} from './secure-http-client.service';
-import {catchError, tap, map} from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +13,8 @@ export class IngredientService {
   private ingredientUrlPost: string;
 
   constructor(private http: SecureHttpClientService) {
-    this.ingredientsUrlGet = 'http://localhost:8085/ingredients';
-    this.ingredientUrlPost = 'http://localhost:8085/ingredient';
+    this.ingredientsUrlGet = environment.apiUrl + '/ingredients';
+    this.ingredientUrlPost = environment.apiUrl + '/ingredient';
   }
 
   public findAll(): Observable<Ingredient[]> {

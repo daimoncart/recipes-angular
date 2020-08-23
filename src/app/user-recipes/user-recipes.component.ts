@@ -12,6 +12,7 @@ import {Component, OnInit} from '@angular/core';
 
 export class UserRecipesComponent implements OnInit{
     recipes: Recipe[] = [];
+    isRequestInProgress = true;
 
     constructor(
         private recipeService: RecipeService,
@@ -24,6 +25,7 @@ export class UserRecipesComponent implements OnInit{
         this.recipeService.findByUserName(name).subscribe(data => {
           console.log(data);
           this.recipes = data;
+          this.isRequestInProgress = false;
         });
       }
 }

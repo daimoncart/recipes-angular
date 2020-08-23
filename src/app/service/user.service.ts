@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {User} from '../model/user';
 import {Observable} from 'rxjs';
 import {SecureHttpClientService} from './secure-http-client.service';
-import {environment} from "../../environments/environment";
+import {environment} from '../../environments/environment';
 
 @Injectable()
 export class UserService {
@@ -13,8 +13,8 @@ export class UserService {
   users: User[];
 
   constructor(private http: SecureHttpClientService) {
-    this.usersUrlGet = 'http://localhost:8085/users';
-    this.userUrlPost = 'http://localhost:8085/user';
+    this.usersUrlGet = environment.apiUrl + '/users';
+    this.userUrlPost = environment.apiUrl + '/user';
   }
 
   public findAll(): Observable<User[]> {

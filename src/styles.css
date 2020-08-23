@@ -3,3 +3,10 @@
 .invalid-feedback {
   display: block!important;
 }
+
+
+.else-block {
+  width: 10rem;
+  height: auto;
+  margin: 100px auto auto auto;
+}

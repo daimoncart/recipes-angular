@@ -6,7 +6,7 @@
     <div>
         <div *ngIf="recipe.pictureLink">
             <div >
-                <img src="{{ recipe.pictureLink}}" alt="Food image" class="food-image">
+                <img src="{{ recipe.pictureLink}}" alt="Food image" class="food-image img-fluid">
             </div>
         </div>
         <div class="emphasized">
@@ -18,16 +18,14 @@
                 <label class="form-check-label" for="defaultCheck1">
                   {{item.quantity}}
                   <span *ngIf="item.measurementUnit.name != 'piece'">{{ item.measurementUnit.name }}</span>
-                  <span *ngIf="item.quantity > 1 && item.measurementUnit.name != 'piece'">s</span>
-                  {{item.ingredient.name}}<span *ngIf="item.quantity > 1 && item.measurementUnit.name == 'piece'">s</span>
+                  {{item.ingredient.name}}
                 </label>
             </div>
         </div>
         <div class="emphasized">
             Instructions:
         </div>
-        <div class="container ingr">
-            {{ recipe.instructions }}
+        <div class="container ingr" [innerHTML]="recipe.instructions">
         </div>
         <div *ngIf="recipe.link" class="my-2 ingr container">
             (<a href="{{ recipe.link }}">Original here</a>)
