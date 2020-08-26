@@ -1,4 +1,4 @@
-import { IngredientMeasurement } from './ingredientMeasurement';
+import { IngredientMeasurement } from './ingredient-measurement';
 
 describe('Recipe', () => {
   it('should create an instance', () => {

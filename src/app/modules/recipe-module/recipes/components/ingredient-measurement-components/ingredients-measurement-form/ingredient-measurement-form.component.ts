@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {IngredientMeasurement} from '../../../../../../model/ingredientMeasurement';
+import {IngredientMeasurement} from '../../../../../../model/ingredient-measurement';
 
 import {UomService} from '../../../../../../service/uom.service';
 import {Ingredient} from '../../../../../../model/ingredient';

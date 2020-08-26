@@ -2,7 +2,7 @@ import { environment } from './../../environments/environment.prod';
 import {Injectable} from '@angular/core';
 import {SecureHttpClientService} from './secure-http-client.service';
 import {Observable} from 'rxjs';
-import {IngredientMeasurement} from '../model/ingredientMeasurement';
+import {IngredientMeasurement} from '../model/ingredient-measurement';
 
 
 @Injectable()
