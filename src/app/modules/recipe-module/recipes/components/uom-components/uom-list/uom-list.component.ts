@@ -12,7 +12,7 @@ export class UomListComponent implements OnInit {
 
   constructor( private uomService: UomService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.uomService.findAll().subscribe(data => {
       this.uoms = data;
     });
