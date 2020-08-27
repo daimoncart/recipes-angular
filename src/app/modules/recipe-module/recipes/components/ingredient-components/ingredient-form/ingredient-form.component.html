@@ -1,18 +1,17 @@
 <div class="card my-5">
     <div class="card-body">
-      <form (ngSubmit)="onSubmit()" #ingredientForm="ngForm">
+      <form (ngSubmit)="onSubmit()" [formGroup]="ingredientForm">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" [(ngModel)]="ingredient.name" 
+          <input type="text" formControlName="ingredientName"
             class="form-control" 
             id="name" 
             name="name" 
-            placeholder="Enter ingredient name"
-            required #name="ngModel">
+            placeholder="Enter ingredient name">
         </div>
-        <div [hidden]="!name.pristine" class="alert alert-danger">Ingredient name is required</div>
+        <!-- <div [hidden]="!ingredientName.pristine" class="alert alert-danger">Ingredient name is required</div> -->
  
-        <button type="submit" [disabled]="!ingredientForm.form.valid" 
+        <button type="submit" [disabled]="!ingredientForm.valid" 
           class="btn btn-info">Submit</button>
       </form>
     </div>

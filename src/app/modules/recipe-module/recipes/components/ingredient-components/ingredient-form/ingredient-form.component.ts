@@ -1,5 +1,6 @@
+import { ReactiveFormsModule, FormsModule, FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { IngredientService } from '../../../../../../service/ingredient.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Ingredient} from '../../../../../../model/ingredient';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -10,17 +11,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class IngredientFormComponent  {
 
-  ingredient: Ingredient;
+  ingredient: Ingredient = new Ingredient();
+  ingredientForm: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private ingredientService: IngredientService
+    private ingredientService: IngredientService,
+    private formBuilder: FormBuilder
   ) {
-    this.ingredient = new Ingredient();
+    this.ingredientForm = formBuilder.group({
+      ingredientName: ['', Validators.required]
+    });
   }
 
   onSubmit() {
+    this.ingredient.name = this.ingredientForm.value.ingredientName;
+    console.log(this.ingredient.name);
     this.ingredientService.save(this.ingredient).subscribe(result => this.gotoIngredientList());
   }
 
