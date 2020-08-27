@@ -41,7 +41,6 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    // this.userService.save(this.user);
 
     FormUtils.markFormGroupTouched(this.registerForm);
 
