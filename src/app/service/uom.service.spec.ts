@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UomServiceService } from './uom.service';
+import { UomService } from './uom.service';
 
 describe('UomServiceService', () => {
-  let service: UomServiceService;
+  let service: UomService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(UomServiceService);
+    service = TestBed.inject(UomService);
   });
 
   it('should be created', () => {
